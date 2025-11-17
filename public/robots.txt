@@ -1,16 +1,25 @@
 # robots.txt for promotorstifingenetic.id
+# Optimized for SEO and search engine crawling
 
+# Allow all search engines to crawl everything
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap locations (help search engines find all pages)
 Sitemap: https://promotorstifingenetic.id/sitemap-index.xml
-Sitemap: https://promotorstifingenetic.id/sitemap-0.xml
 
-# Crawl delay (optional - adjust as needed)
-Crawl-delay: 1
+# Optional: Specific rules for major search engines
+# Google
+User-agent: Googlebot
+Allow: /
 
-# Disallow admin or private paths if any
-# User-agent: *
-# Disallow: /admin/
-# Disallow: /private/
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+
+# Note: If you want to block AI training in the future,
+# use meta tags in HTML instead of robots.txt
