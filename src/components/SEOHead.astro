@@ -32,6 +32,11 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${SITE_CONFIG.url}${o
 {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
 <link rel="canonical" href={canonicalURL} />
 
+<!-- Alternate Language Tags -->
+<link rel="alternate" hreflang="id" href={canonicalURL} />
+<link rel="alternate" hreflang="id-ID" href={canonicalURL} />
+<link rel="alternate" hreflang="x-default" href={canonicalURL} />
+
 <!-- Robots -->
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 
@@ -57,13 +62,44 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${SITE_CONFIG.url}${o
 <meta charset="UTF-8" />
 <meta name="generator" content={Astro.generator} />
 
+<!-- Mobile Web App -->
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content={SITE_CONFIG.name} />
+<meta name="theme-color" content="#0284c7" />
+
+<!-- Language -->
+<meta http-equiv="content-language" content="id" />
+<meta name="language" content="Indonesian" />
+
+<!-- Geo Tags (Indonesia) -->
+<meta name="geo.region" content="ID" />
+<meta name="geo.placename" content="Indonesia" />
+
+<!-- Verification (Add your codes later) -->
+<!-- <meta name="google-site-verification" content="your-code" /> -->
+<!-- <meta name="msvalidate.01" content="your-code" /> -->
+
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
 
-<!-- Fonts (Optional - Google Fonts) -->
+<!-- Preconnect for Performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+<!-- Fonts (Optimized Loading) -->
 <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
   rel="stylesheet"
+  media="print"
+  onload="this.media='all'"
 />
+<noscript>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+</noscript>

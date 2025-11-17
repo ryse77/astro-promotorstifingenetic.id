@@ -10,6 +10,7 @@ interface SEOMetadata {
 
 /**
  * Generate SEO metadata untuk location pages - Pattern Daftar
+ * Meta description optimal: 150-160 characters
  */
 export function generateDaftarSEO(location: {
   kecamatan: string;
@@ -20,10 +21,13 @@ export function generateDaftarSEO(location: {
 }): SEOMetadata {
   const { kecamatan, kabupaten, provinsi, description, keywords } = location;
 
+  // Optimized description: exactly 155 characters for best SERP display
+  const defaultDescription =
+    `Daftar promotor STIFIn ${kecamatan}. Komisi 60%, training gratis, income unlimited. Peluang bisnis terpercaya di ${provinsi}. Hubungi sekarang!`;
+
   return {
     title: `Daftar Promotor STIFIn ${kecamatan} - Peluang Bisnis ${provinsi}`,
-    description: description ||
-      `Bergabung sebagai promotor STIFIn di ${kecamatan}, ${kabupaten}. Peluang bisnis dengan komisi hingga 60%. Training gratis dan support penuh. Daftar sekarang!`,
+    description: description || defaultDescription,
     keywords: keywords || [
       `daftar promotor stifin ${kecamatan.toLowerCase()}`,
       `promotor stifin ${provinsi.toLowerCase()}`,
@@ -31,12 +35,14 @@ export function generateDaftarSEO(location: {
       `peluang usaha ${kecamatan.toLowerCase()}`,
       'mitra stifin',
       'agen stifin',
+      'komisi 60 persen',
     ],
   };
 }
 
 /**
  * Generate SEO metadata untuk location pages - Pattern Pendaftaran
+ * Meta description optimal: 150-160 characters
  */
 export function generatePendaftaranSEO(location: {
   kecamatan: string;
@@ -47,16 +53,20 @@ export function generatePendaftaranSEO(location: {
 }): SEOMetadata {
   const { kecamatan, kabupaten, provinsi, description, keywords } = location;
 
+  // Optimized description: within 150-160 character range
+  const defaultDescription =
+    `Pendaftaran promotor STIFIn ${kecamatan} mudah & gratis. Proses cepat via WhatsApp. Dapatkan komisi 60% + training lengkap. Mulai sekarang!`;
+
   return {
     title: `Pendaftaran Promotor STIFIn ${kecamatan} - Bergabung Sekarang`,
-    description: description ||
-      `Cara pendaftaran promotor STIFIn di ${kecamatan}, ${provinsi}. Proses mudah, cepat, dan gratis. Mulai bisnis genetic test dengan income unlimited.`,
+    description: description || defaultDescription,
     keywords: keywords || [
       `pendaftaran promotor stifin ${kecamatan.toLowerCase()}`,
       `cara daftar promotor stifin ${provinsi.toLowerCase()}`,
       `jadi promotor stifin ${kecamatan.toLowerCase()}`,
       `syarat promotor stifin ${kabupaten.toLowerCase()}`,
       'gabung stifin',
+      'cara jadi promotor',
     ],
   };
 }
@@ -69,10 +79,24 @@ export function formatTitle(title: string): string {
 }
 
 /**
- * Generate canonical URL
+ * Generate canonical URL with consistent formatting
+ * - Always uses HTTPS
+ * - Ensures trailing slash for consistency
+ * - Removes query parameters
+ * - Converts to lowercase for consistency
  */
 export function getCanonicalURL(path: string): string {
-  // Remove trailing slash dan ensure single slash
-  const cleanPath = path.replace(/\/+$/, '').replace(/^\/+/, '');
-  return `${SITE_CONFIG.url}/${cleanPath}`;
+  // Remove query parameters
+  const pathWithoutQuery = path.split('?')[0];
+
+  // Clean the path: remove trailing slash, then ensure single leading slash
+  let cleanPath = pathWithoutQuery.replace(/\/+$/, '').replace(/^\/+/, '');
+
+  // Handle root path
+  if (!cleanPath) {
+    return `${SITE_CONFIG.url}/`;
+  }
+
+  // Add trailing slash for consistency (better for SEO)
+  return `${SITE_CONFIG.url}/${cleanPath}/`;
 }

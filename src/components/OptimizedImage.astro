@@ -1,0 +1,50 @@
+---
+/**
+ * Optimized Image Component
+ * - Lazy loading by default
+ * - Prevents layout shift with dimensions
+ * - SEO-friendly alt text
+ * - Optional eager loading for above-the-fold images
+ */
+
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'auto' | 'sync';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className = '',
+  loading = 'lazy',
+  decoding = 'async',
+  fetchpriority = 'auto',
+  sizes,
+} = Astro.props;
+
+// Ensure alt text is provided for accessibility
+if (!alt) {
+  console.warn(`⚠️  Missing alt text for image: ${src}`);
+}
+---
+
+<img
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding={decoding}
+  fetchpriority={fetchpriority}
+  class={className}
+  {sizes}
+/>

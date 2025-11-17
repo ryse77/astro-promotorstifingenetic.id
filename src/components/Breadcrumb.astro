@@ -1,0 +1,81 @@
+---
+import { SITE_CONFIG } from '@/lib/constants';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  items?: BreadcrumbItem[];
+  location?: {
+    kecamatan: string;
+    provinsi: string;
+    provinsiSlug: string;
+    slug: string;
+  };
+}
+
+const { items, location } = Astro.props;
+
+// Get current path info
+const currentPath = Astro.url.pathname;
+const isDaftarPage = currentPath.includes('/daftar-promotor-stifin/');
+const isPendaftaranPage = currentPath.includes('/pendaftaran-promotor-stifin/');
+
+// Build breadcrumb items
+let breadcrumbs: BreadcrumbItem[] = [
+  { name: 'Home', url: '/' }
+];
+
+// Auto-generate breadcrumbs for location pages
+if (location && (isDaftarPage || isPendaftaranPage)) {
+  const baseKeyword = isDaftarPage ? 'Daftar Promotor STIFIn' : 'Pendaftaran Promotor STIFIn';
+  const baseUrl = isDaftarPage ? '/daftar-promotor-stifin' : '/pendaftaran-promotor-stifin';
+
+  breadcrumbs.push(
+    { name: baseKeyword, url: baseUrl },
+    { name: location.provinsi, url: `${baseUrl}/${location.provinsiSlug}` },
+    { name: location.kecamatan, url: `${baseUrl}/${location.provinsiSlug}/${location.slug}` }
+  );
+} else if (items && items.length > 0) {
+  // Use custom breadcrumbs if provided
+  breadcrumbs = [...breadcrumbs, ...items];
+}
+
+// Don't show breadcrumb if only home
+if (breadcrumbs.length <= 1) {
+  return null;
+}
+---
+
+<nav aria-label="Breadcrumb" class="mb-6">
+  <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-600">
+    {breadcrumbs.map((item, index) => {
+      const isLast = index === breadcrumbs.length - 1;
+
+      return (
+        <li class="flex items-center gap-2">
+          {index > 0 && (
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          )}
+
+          {isLast ? (
+            <span class="font-medium text-primary-700" aria-current="page">
+              {item.name}
+            </span>
+          ) : (
+            <a
+              href={item.url}
+              class="hover:text-primary-600 hover:underline transition"
+            >
+              {item.name}
+            </a>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>
