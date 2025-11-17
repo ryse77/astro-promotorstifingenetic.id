@@ -1,0 +1,64 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Hero from '@/components/Hero.astro';
+import BenefitsSection from '@/components/BenefitsSection.astro';
+import CTAWhatsApp from '@/components/CTAWhatsApp.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string[];
+  location: {
+    slug: string;
+    kecamatan: string;
+    kabupaten: string;
+    provinsi: string;
+    coordinates?: { lat: number; lng: number };
+  };
+  pattern: 'daftar' | 'pendaftaran';
+  heroTitle: string;
+  heroSubtitle: string;
+  heroDescription?: string;
+}
+
+const {
+  title,
+  description,
+  keywords,
+  location,
+  pattern,
+  heroTitle,
+  heroSubtitle,
+  heroDescription,
+} = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  schemaType="LocalBusiness"
+  location={location}
+>
+  <!-- Hero Section -->
+  <Hero
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    description={heroDescription}
+    ctaText="Daftar Sekarang"
+    ctaUrl="#cta"
+  />
+
+  <!-- Custom Content Slot -->
+  <slot />
+
+  <!-- Benefits Section -->
+  <BenefitsSection location={location.kecamatan} />
+
+  <!-- CTA WhatsApp -->
+  <CTAWhatsApp
+    kecamatan={location.kecamatan}
+    provinsi={location.provinsi}
+    pattern={pattern}
+  />
+</BaseLayout>

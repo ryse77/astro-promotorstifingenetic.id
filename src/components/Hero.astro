@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  description?: string;
+  ctaText?: string;
+  ctaUrl?: string;
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  ctaText = 'Daftar Sekarang',
+  ctaUrl = '#cta'
+} = Astro.props;
+---
+
+<section class="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+  <!-- Background Pattern (optional) -->
+  <div class="absolute inset-0 bg-black opacity-10">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  </div>
+
+  <div class="container mx-auto px-4 py-20 md:py-28 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Subtitle Badge -->
+      <div class="inline-block mb-6 px-4 py-2 bg-white bg-opacity-20 rounded-full text-sm font-semibold backdrop-blur-sm">
+        {subtitle}
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+        {title}
+      </h1>
+
+      <!-- Description -->
+      {description && (
+        <p class="text-xl md:text-2xl text-primary-100 mb-8 leading-relaxed">
+          {description}
+        </p>
+      )}
+
+      <!-- CTA Button -->
+      <a
+        href={ctaUrl}
+        class="inline-block bg-white text-primary-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-primary-50 transition-all transform hover:scale-105 shadow-xl"
+      >
+        {ctaText}
+      </a>
+    </div>
+  </div>
+</section>

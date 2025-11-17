@@ -1,0 +1,16 @@
+# robots.txt for promotorstifingenetic.id
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://promotorstifingenetic.id/sitemap-index.xml
+Sitemap: https://promotorstifingenetic.id/sitemap-0.xml
+
+# Crawl delay (optional - adjust as needed)
+Crawl-delay: 1
+
+# Disallow admin or private paths if any
+# User-agent: *
+# Disallow: /admin/
+# Disallow: /private/

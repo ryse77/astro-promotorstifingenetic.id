@@ -1,0 +1,150 @@
+---
+import LocationLayout from '@/layouts/LocationLayout.astro';
+import { generateDaftarSEO } from '@/lib/seo';
+import citiesData from '@/lib/data/cities.json';
+
+// Generate static paths untuk semua lokasi dengan 3-level structure
+export async function getStaticPaths() {
+  return citiesData.map((location) => ({
+    params: {
+      provinsi: location.provinsiSlug,
+      kota: location.slug,
+    },
+    props: { location },
+  }));
+}
+
+const { location } = Astro.props;
+const { kecamatan, kabupaten, provinsi, demandLevel, coordinates } = location;
+
+// Generate SEO metadata
+const seo = generateDaftarSEO(location);
+---
+
+<LocationLayout
+  title={seo.title}
+  description={seo.description}
+  keywords={seo.keywords}
+  location={location}
+  pattern="daftar"
+  heroTitle={`Daftar Promotor STIFIn di ${kecamatan}`}
+  heroSubtitle={`Peluang Bisnis Genetic Test di ${provinsi}`}
+  heroDescription={`Bergabung sebagai promotor STIFIn di ${kecamatan} dan dapatkan komisi hingga 60%. Training gratis, support penuh, income unlimited!`}
+>
+  <!-- Additional Content Section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <!-- Intro -->
+        <div class="mb-12">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
+            Mengapa Menjadi Promotor STIFIn di {kecamatan}?
+          </h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-4">
+            {kecamatan}, {kabupaten} merupakan lokasi strategis untuk mengembangkan bisnis STIFIn Genetic Test.
+            Dengan populasi yang terus berkembang dan kesadaran akan pentingnya mengenali potensi diri,
+            peluang bisnis di {provinsi} sangat menjanjikan.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Sebagai promotor STIFIn, Anda tidak hanya mendapatkan penghasilan tambahan, tetapi juga membantu
+            masyarakat {kecamatan} menemukan potensi terbaik mereka melalui tes genetic yang ilmiah dan terpercaya.
+          </p>
+        </div>
+
+        <!-- Cara Kerja -->
+        <div class="mb-12 bg-gray-50 rounded-xl p-8">
+          <h3 class="text-2xl font-heading font-bold text-gray-900 mb-6">
+            Cara Kerja Sebagai Promotor STIFIn
+          </h3>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
+                1
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Daftar Sebagai Promotor</h4>
+                <p class="text-gray-700">Hubungi kami via WhatsApp untuk memulai proses pendaftaran yang mudah dan gratis.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
+                2
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Ikuti Training Gratis</h4>
+                <p class="text-gray-700">Dapatkan training lengkap tentang produk, penjualan, dan sistem STIFIn.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
+                3
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Promosikan Layanan</h4>
+                <p class="text-gray-700">Tawarkan tes genetic STIFIn kepada keluarga, teman, dan komunitas di {kecamatan}.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
+                4
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Dapatkan Komisi</h4>
+                <p class="text-gray-700">Terima komisi hingga 60% dari setiap transaksi yang Anda lakukan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-heading font-bold text-gray-900 mb-6">
+            Pertanyaan yang Sering Diajukan
+          </h3>
+          <div class="space-y-4">
+            <div class="border-b border-gray-200 pb-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Apakah ada biaya pendaftaran?</h4>
+              <p class="text-gray-700">Tidak ada biaya pendaftaran. Bergabung sebagai promotor STIFIn 100% gratis!</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Berapa komisi yang didapat?</h4>
+              <p class="text-gray-700">Anda bisa mendapatkan komisi hingga 60% dari setiap transaksi tes genetic.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Apakah harus full time?</h4>
+              <p class="text-gray-700">Tidak. Anda bisa menjalankan bisnis ini secara paruh waktu sesuai waktu luang Anda.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Wilayah mana saja yang bisa dijangkau?</h4>
+              <p class="text-gray-700">Anda bisa melayani seluruh wilayah {kecamatan}, {kabupaten}, dan sekitarnya.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial / Demand Level Indicator -->
+        {demandLevel === 'high' && (
+          <div class="bg-green-50 border-l-4 border-green-600 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <svg class="h-6 w-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div class="ml-3">
+                <h3 class="text-sm font-medium text-green-800">
+                  Demand Tinggi di {kecamatan}!
+                </h3>
+                <div class="mt-2 text-sm text-green-700">
+                  <p>
+                    Area {kecamatan} memiliki demand tinggi untuk layanan tes genetic STIFIn.
+                    Ini adalah waktu yang tepat untuk bergabung sebagai promotor!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+</LocationLayout>

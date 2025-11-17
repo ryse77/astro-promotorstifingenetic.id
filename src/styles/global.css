@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply antialiased;
+    @apply text-gray-900;
+    @apply bg-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .container {
+    @apply max-w-7xl;
+  }
+
+  /* Custom button styles */
+  .btn-primary {
+    @apply bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold;
+    @apply hover:bg-primary-700 transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-600 text-white px-6 py-3 rounded-lg font-semibold;
+    @apply hover:bg-secondary-700 transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-lg font-semibold;
+    @apply hover:bg-primary-600 hover:text-white transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6;
+    @apply hover:shadow-xl transition-shadow;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  /* Content wrapper */
+  .content-wrapper {
+    @apply prose prose-lg max-w-none;
+    @apply prose-headings:font-heading prose-headings:font-bold;
+    @apply prose-a:text-primary-600 hover:prose-a:text-primary-700;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600;
+    @apply bg-clip-text text-transparent;
+  }
+}

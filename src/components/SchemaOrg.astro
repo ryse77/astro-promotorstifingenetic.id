@@ -1,0 +1,84 @@
+---
+import { SITE_CONFIG } from '@/lib/constants';
+
+interface Props {
+  type: 'LocalBusiness' | 'Organization';
+  location?: {
+    kecamatan: string;
+    provinsi: string;
+    coordinates?: { lat: number; lng: number };
+  };
+}
+
+const { type, location } = Astro.props;
+
+// LocalBusiness Schema
+const localBusinessSchema = location ? {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": `Promotor STIFIn ${location.kecamatan}`,
+  "description": `Peluang bisnis sebagai promotor STIFIn Genetic Test di ${location.kecamatan}, ${location.provinsi}. Komisi hingga 60% dengan training gratis.`,
+  "url": Astro.url.href,
+  "telephone": `+${SITE_CONFIG.whatsapp.number}`,
+  "email": SITE_CONFIG.email,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": location.kecamatan,
+    "addressRegion": location.provinsi,
+    "addressCountry": "ID"
+  },
+  ...(location.coordinates && {
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": location.coordinates.lat,
+      "longitude": location.coordinates.lng
+    }
+  }),
+  "openingHours": "Mo-Su 09:00-21:00",
+  "priceRange": "$$",
+} : null;
+
+// Organization Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": SITE_CONFIG.name,
+  "url": SITE_CONFIG.url,
+  "logo": `${SITE_CONFIG.url}/favicon.svg`,
+  "description": SITE_CONFIG.description,
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": `+${SITE_CONFIG.whatsapp.number}`,
+    "contactType": "Customer Service",
+    "availableLanguage": "Indonesian",
+    "areaServed": "ID"
+  },
+  "sameAs": [
+    SITE_CONFIG.social.facebook,
+    SITE_CONFIG.social.instagram,
+    SITE_CONFIG.social.twitter,
+  ]
+};
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": SITE_CONFIG.url
+  }]
+};
+
+const schema = type === 'LocalBusiness' && localBusinessSchema
+  ? localBusinessSchema
+  : organizationSchema;
+---
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<!-- Breadcrumb Schema (always include) -->
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
