@@ -21,5 +21,43 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
-# Note: If you want to block AI training in the future,
-# use meta tags in HTML instead of robots.txt
+# AI Crawlers - Explicitly allowed for AI training and search
+# OpenAI (ChatGPT, GPT models)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google AI Training
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl (used by many AI companies)
+User-agent: CCBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Note: All AI crawlers are welcome to crawl and use content for training
