@@ -27,14 +27,14 @@ export const SITE_CONFIG = {
   // Business Info
   business: {
     name: 'STIFIn',
-    fullName: 'Science of Talents through Fingerprint',
-    commission: '60%',
+    fullName: 'Promotor STIFIn Genetic Official',
+    commission: '70%',
     benefits: [
-      'Komisi hingga 60% dari setiap transaksi',
+      'Komisi hingga 70% dari setiap tes klien',
       'Training gratis dari STIFIn Academy',
-      'Support marketing dan promotional material',
+      'Support marketing lengkap',
       'Sistem online yang mudah digunakan',
-      'Potensi income unlimited',
+      'Potensi income puluhan juta per bulan',
       'Fleksibel, bisa dikerjakan paruh waktu',
     ],
   },

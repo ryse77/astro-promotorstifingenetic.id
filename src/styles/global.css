@@ -70,7 +70,15 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-secondary-600;
+    @apply bg-gradient-to-r from-primary-600 via-secondary-500 to-primary-500;
     @apply bg-clip-text text-transparent;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800;
+  }
+
+  .gradient-accent {
+    @apply bg-gradient-to-r from-secondary-500 via-amber-400 to-secondary-600;
   }
 }
