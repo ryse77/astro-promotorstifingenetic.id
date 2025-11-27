@@ -8,8 +8,8 @@ export const SITE_CONFIG = {
 
   // Social & Contact
   whatsapp: {
-    number: '6281234567890', // Ganti dengan nomor WA yang aktif
-    displayNumber: '+62 812-3456-7890',
+    number: '628122011519',
+    displayNumber: '+62 812-2011-519',
   },
 
   email: 'info@promotorstifingenetic.id',
