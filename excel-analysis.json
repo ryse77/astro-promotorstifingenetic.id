@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "totalRows": 5891,
+    "columns": [
+      "Provinsi",
+      "Kabupaten/Kota",
+      "Kecamatan"
+    ],
+    "sheets": [
+      "Sheet1"
+    ]
+  },
+  "sample": [
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Arongan Lambalek"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Bubon"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Johan Pahlawan"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Kaway XVI"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Meureubo"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Pante Ceureumen"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Panton Reu"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Samatiga"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Sungai Mas"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Woyla"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Woyla Barat"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat",
+      "Kecamatan": "Woyla Timur"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat Daya",
+      "Kecamatan": "Babahrot"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat Daya",
+      "Kecamatan": "Blangpidie"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat Daya",
+      "Kecamatan": "Jeumpa"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat Daya",
+      "Kecamatan": "Kuala Batee"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat Daya",
+      "Kecamatan": "Lembah Sabil"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat Daya",
+      "Kecamatan": "Manggeng"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat Daya",
+      "Kecamatan": "Setia"
+    },
+    {
+      "Provinsi": "Aceh",
+      "Kabupaten/Kota": "Kab. Aceh Barat Daya",
+      "Kecamatan": "Susoh"
+    }
+  ]
+}
