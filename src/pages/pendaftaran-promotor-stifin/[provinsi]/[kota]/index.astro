@@ -2,6 +2,8 @@
 import LocationLayout from '@/layouts/LocationLayout.astro';
 import { generatePendaftaranSEO } from '@/lib/seo';
 import citiesData from '@/lib/data/cities.json';
+import { getLocationIndex, getTemplateType } from '@/lib/templates/index';
+import { getTemplateContent } from '@/lib/templates/contentVariations';
 
 // Generate static paths untuk semua lokasi dengan 3-level structure
 export async function getStaticPaths() {
@@ -15,7 +17,12 @@ export async function getStaticPaths() {
 }
 
 const { location } = Astro.props;
-const { kecamatan, kabupaten, provinsi, demandLevel, coordinates } = location;
+const { kecamatan, kabupaten, provinsi, demandLevel } = location;
+
+// Get template based on location index
+const locationIndex = getLocationIndex(citiesData, location.slug);
+const templateType = getTemplateType(locationIndex);
+const templateContent = getTemplateContent(templateType, 'pendaftaran', location);
 
 // Generate SEO metadata
 const seo = generatePendaftaranSEO(location);
@@ -27,9 +34,9 @@ const seo = generatePendaftaranSEO(location);
   keywords={seo.keywords}
   location={location}
   pattern="pendaftaran"
-  heroTitle={`Pendaftaran Promotor STIFIn ${kecamatan}`}
-  heroSubtitle={`Peluang Binsis Promotor STIFIn di ${provinsi}`}
-  heroDescription={`Mulai bisnis dengan potensi income puluhan juta di ${kecamatan} sekarang!`}
+  heroTitle={templateContent.heroTitle}
+  heroSubtitle={templateContent.heroSubtitle}
+  heroDescription={templateContent.heroDescription}
 >
   <!-- Proses Pendaftaran Section -->
   <section class="py-16 md:py-24 bg-white">
@@ -38,11 +45,10 @@ const seo = generatePendaftaranSEO(location);
         <!-- Intro -->
         <div class="mb-12 text-center">
           <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
-            Cara Pendaftaran Promotor STIFIn di {kecamatan}
+            {templateContent.mainSectionTitle}
           </h2>
           <p class="text-lg text-gray-700 leading-relaxed">
-            Bergabung sebagai promotor STIFIn di {kecamatan}, {provinsi} sangat mudah.
-            Ikuti 4 langkah sederhana ini untuk memulai bisnis Anda!
+            {templateContent.mainContent}
           </p>
         </div>
 
@@ -62,7 +68,7 @@ const seo = generatePendaftaranSEO(location);
               </p>
               <ul class="list-disc list-inside text-gray-600 space-y-1">
                 <li>Response cepat dalam hitungan menit</li>
-                <li>Konsultasi gratis tentang bisnis STIFIn</li>
+                <li>Konsultasi tentang peluang Licensed Promotor STIFIn</li>
                 <li>Jawaban atas semua pertanyaan Anda</li>
               </ul>
             </div>
@@ -75,15 +81,15 @@ const seo = generatePendaftaranSEO(location);
               </div>
             </div>
             <div class="flex-1">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Isi Formulir Pendaftaran</h3>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Workshop STIFIn Level 1 (WSL1)</h3>
               <p class="text-gray-700 mb-3">
-                Tim kami akan mengirimkan link formulir pendaftaran yang mudah dan cepat diisi.
-                Proses pengisian hanya membutuhkan waktu 5 menit.
+                Ikuti Workshop STIFIn Level 1 selama 1 hari untuk memahami konsep dasar STIFIn,
+                9 personality genetik, dan sirkulasi mesin kecerdasan.
               </p>
               <ul class="list-disc list-inside text-gray-600 space-y-1">
-                <li>Formulir online yang user-friendly</li>
-                <li>Data pribadi dijamin aman dan rahasia</li>
-                <li>Tidak ada biaya pendaftaran</li>
+                <li>Sertifikasi WSL1 resmi</li>
+                <li>Materi komprehensif tentang STIFIn</li>
+                <li>Dipandu trainer berpengalaman</li>
               </ul>
             </div>
           </div>

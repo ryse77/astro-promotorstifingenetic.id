@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2025-12-06T13:00:18.090Z",
+  "source": "stifin-indonesia.xlsx",
+  "stats": {
+    "totalLocations": 5891,
+    "totalProvinsi": 29,
+    "totalKabupaten": 410,
+    "totalKecamatan": 5431,
+    "highDemand": 515,
+    "mediumDemand": 5376
+  },
+  "sampleEntries": [
+    {
+      "slug": "arongan-lambalek",
+      "kecamatan": "Arongan Lambalek",
+      "kabupaten": "Kab. Aceh Barat",
+      "provinsi": "Aceh",
+      "provinsiSlug": "aceh",
+      "demandLevel": "medium",
+      "keywords": [
+        "promotor stifin arongan lambalek",
+        "bisnis stifin aceh barat",
+        "daftar promotor stifin aceh"
+      ],
+      "description": "Bergabung sebagai promotor STIFIn di Arongan Lambalek, Kab. Aceh Barat. Peluang bisnis dengan komisi hingga 70%. Training gratis, support penuh!"
+    },
+    {
+      "slug": "bubon",
+      "kecamatan": "Bubon",
+      "kabupaten": "Kab. Aceh Barat",
+      "provinsi": "Aceh",
+      "provinsiSlug": "aceh",
+      "demandLevel": "medium",
+      "keywords": [
+        "promotor stifin bubon",
+        "bisnis stifin aceh barat",
+        "daftar promotor stifin aceh"
+      ],
+      "description": "Bergabung sebagai promotor STIFIn di Bubon, Kab. Aceh Barat. Peluang bisnis dengan komisi hingga 70%. Training gratis, support penuh!"
+    },
+    {
+      "slug": "johan-pahlawan",
+      "kecamatan": "Johan Pahlawan",
+      "kabupaten": "Kab. Aceh Barat",
+      "provinsi": "Aceh",
+      "provinsiSlug": "aceh",
+      "demandLevel": "medium",
+      "keywords": [
+        "promotor stifin johan pahlawan",
+        "bisnis stifin aceh barat",
+        "daftar promotor stifin aceh"
+      ],
+      "description": "Bergabung sebagai promotor STIFIn di Johan Pahlawan, Kab. Aceh Barat. Peluang bisnis dengan komisi hingga 70%. Training gratis, support penuh!"
+    },
+    {
+      "slug": "kaway-xvi",
+      "kecamatan": "Kaway XVI",
+      "kabupaten": "Kab. Aceh Barat",
+      "provinsi": "Aceh",
+      "provinsiSlug": "aceh",
+      "demandLevel": "medium",
+      "keywords": [
+        "promotor stifin kaway xvi",
+        "bisnis stifin aceh barat",
+        "daftar promotor stifin aceh"
+      ],
+      "description": "Bergabung sebagai promotor STIFIn di Kaway XVI, Kab. Aceh Barat. Peluang bisnis dengan komisi hingga 70%. Training gratis, support penuh!"
+    },
+    {
+      "slug": "meureubo",
+      "kecamatan": "Meureubo",
+      "kabupaten": "Kab. Aceh Barat",
+      "provinsi": "Aceh",
+      "provinsiSlug": "aceh",
+      "demandLevel": "medium",
+      "keywords": [
+        "promotor stifin meureubo",
+        "bisnis stifin aceh barat",
+        "daftar promotor stifin aceh"
+      ],
+      "description": "Bergabung sebagai promotor STIFIn di Meureubo, Kab. Aceh Barat. Peluang bisnis dengan komisi hingga 70%. Training gratis, support penuh!"
+    }
+  ]
+}

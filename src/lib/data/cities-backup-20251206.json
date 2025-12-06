@@ -1,0 +1,302 @@
+[
+  {
+    "slug": "jakarta-pusat",
+    "kecamatan": "Jakarta Pusat",
+    "kabupaten": "Jakarta",
+    "provinsi": "DKI Jakarta",
+    "provinsiSlug": "dki-jakarta",
+    "population": 900000,
+    "demandLevel": "high",
+    "coordinates": {
+      "lat": -6.2088,
+      "lng": 106.8456
+    },
+    "keywords": ["promotor stifin jakarta", "bisnis stifin jakarta pusat", "peluang usaha jakarta"],
+    "description": "Peluang bisnis sebagai promotor STIFIn di Jakarta Pusat. Wilayah pusat bisnis dan perkantoran dengan demand tinggi untuk tes genetic."
+  },
+  {
+    "slug": "jakarta-selatan",
+    "kecamatan": "Jakarta Selatan",
+    "kabupaten": "Jakarta",
+    "provinsi": "DKI Jakarta",
+    "provinsiSlug": "dki-jakarta",
+    "population": 2200000,
+    "demandLevel": "high",
+    "coordinates": {
+      "lat": -6.3000,
+      "lng": 106.8166
+    },
+    "keywords": ["promotor stifin jakarta selatan", "bisnis stifin jaksel"],
+    "description": "Bergabung sebagai promotor STIFIn di Jakarta Selatan, area dengan banyak perkantoran dan penduduk menengah ke atas."
+  },
+  {
+    "slug": "bandung",
+    "kecamatan": "Bandung Kota",
+    "kabupaten": "Bandung",
+    "provinsi": "Jawa Barat",
+    "provinsiSlug": "jawa-barat",
+    "population": 2500000,
+    "demandLevel": "high",
+    "coordinates": {
+      "lat": -6.9175,
+      "lng": 107.6191
+    },
+    "keywords": ["promotor stifin bandung", "bisnis stifin jawa barat"],
+    "description": "Peluang menjadi promotor STIFIn di Kota Bandung, kota pendidikan dengan banyak orang tua yang peduli perkembangan anak."
+  },
+  {
+    "slug": "surabaya",
+    "kecamatan": "Surabaya Kota",
+    "kabupaten": "Surabaya",
+    "provinsi": "Jawa Timur",
+    "provinsiSlug": "jawa-timur",
+    "population": 3000000,
+    "demandLevel": "high",
+    "coordinates": {
+      "lat": -7.2575,
+      "lng": 112.7521
+    },
+    "keywords": ["promotor stifin surabaya", "bisnis stifin jawa timur"],
+    "description": "Daftar sebagai promotor STIFIn di Surabaya, kota metropolitan terbesar kedua di Indonesia dengan pasar potensial sangat besar."
+  },
+  {
+    "slug": "medan",
+    "kecamatan": "Medan Kota",
+    "kabupaten": "Medan",
+    "provinsi": "Sumatera Utara",
+    "provinsiSlug": "sumatera-utara",
+    "population": 2200000,
+    "demandLevel": "high",
+    "coordinates": {
+      "lat": 3.5952,
+      "lng": 98.6722
+    },
+    "keywords": ["promotor stifin medan", "bisnis stifin sumatra"],
+    "description": "Kesempatan menjadi promotor STIFIn di Medan, pusat ekonomi Sumatera dengan demand tinggi untuk layanan genetic test."
+  },
+  {
+    "slug": "semarang",
+    "kecamatan": "Semarang Kota",
+    "kabupaten": "Semarang",
+    "provinsi": "Jawa Tengah",
+    "provinsiSlug": "jawa-tengah",
+    "population": 1800000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": -6.9667,
+      "lng": 110.4167
+    },
+    "keywords": ["promotor stifin semarang", "bisnis stifin jawa tengah"],
+    "description": "Peluang bisnis promotor STIFIn di Semarang, kota pelabuhan dengan ekonomi yang berkembang pesat."
+  },
+  {
+    "slug": "makassar",
+    "kecamatan": "Makassar Kota",
+    "kabupaten": "Makassar",
+    "provinsi": "Sulawesi Selatan",
+    "provinsiSlug": "sulawesi-selatan",
+    "population": 1500000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": -5.1477,
+      "lng": 119.4327
+    },
+    "keywords": ["promotor stifin makassar", "bisnis stifin sulawesi"],
+    "description": "Bergabung sebagai promotor STIFIn di Makassar, pusat ekonomi Indonesia Timur dengan potensi pasar yang besar."
+  },
+  {
+    "slug": "palembang",
+    "kecamatan": "Palembang Kota",
+    "kabupaten": "Palembang",
+    "provinsi": "Sumatera Selatan",
+    "provinsiSlug": "sumatera-selatan",
+    "population": 1600000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": -2.9761,
+      "lng": 104.7754
+    },
+    "keywords": ["promotor stifin palembang", "bisnis stifin sumsel"],
+    "description": "Daftar promotor STIFIn di Palembang, kota terbesar di Sumatera Selatan dengan ekonomi berbasis perdagangan dan industri."
+  },
+  {
+    "slug": "denpasar",
+    "kecamatan": "Denpasar Kota",
+    "kabupaten": "Denpasar",
+    "provinsi": "Bali",
+    "provinsiSlug": "bali",
+    "population": 900000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": -8.6705,
+      "lng": 115.2126
+    },
+    "keywords": ["promotor stifin denpasar", "bisnis stifin bali"],
+    "description": "Peluang menjadi promotor STIFIn di Denpasar Bali, kota wisata dengan banyak penduduk yang sadar akan pengembangan diri."
+  },
+  {
+    "slug": "yogyakarta",
+    "kecamatan": "Yogyakarta Kota",
+    "kabupaten": "Yogyakarta",
+    "provinsi": "Daerah Istimewa Yogyakarta",
+    "provinsiSlug": "yogyakarta",
+    "population": 400000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": -7.7956,
+      "lng": 110.3695
+    },
+    "keywords": ["promotor stifin jogja", "bisnis stifin yogyakarta"],
+    "description": "Kesempatan menjadi promotor STIFIn di Yogyakarta, kota pelajar dengan banyak institusi pendidikan."
+  },
+  {
+    "slug": "malang",
+    "kecamatan": "Malang Kota",
+    "kabupaten": "Malang",
+    "provinsi": "Jawa Timur",
+    "provinsiSlug": "jawa-timur",
+    "population": 900000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": -7.9797,
+      "lng": 112.6304
+    },
+    "keywords": ["promotor stifin malang", "bisnis stifin malang"],
+    "description": "Bergabung sebagai promotor STIFIn di Kota Malang, kota pendidikan dengan banyak universitas dan sekolah."
+  },
+  {
+    "slug": "balikpapan",
+    "kecamatan": "Balikpapan Kota",
+    "kabupaten": "Balikpapan",
+    "provinsi": "Kalimantan Timur",
+    "provinsiSlug": "kalimantan-timur",
+    "population": 700000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": -1.2379,
+      "lng": 116.8529
+    },
+    "keywords": ["promotor stifin balikpapan", "bisnis stifin kalimantan"],
+    "description": "Peluang bisnis promotor STIFIn di Balikpapan, kota minyak dengan pendapatan per kapita tinggi."
+  },
+  {
+    "slug": "bekasi",
+    "kecamatan": "Bekasi Kota",
+    "kabupaten": "Bekasi",
+    "provinsi": "Jawa Barat",
+    "provinsiSlug": "jawa-barat",
+    "population": 2500000,
+    "demandLevel": "high",
+    "coordinates": {
+      "lat": -6.2383,
+      "lng": 106.9756
+    },
+    "keywords": ["promotor stifin bekasi", "bisnis stifin bekasi"],
+    "description": "Daftar sebagai promotor STIFIn di Bekasi, kota satelit Jakarta dengan populasi besar dan berkembang."
+  },
+  {
+    "slug": "tangerang",
+    "kecamatan": "Tangerang Kota",
+    "kabupaten": "Tangerang",
+    "provinsi": "Banten",
+    "provinsiSlug": "banten",
+    "population": 2000000,
+    "demandLevel": "high",
+    "coordinates": {
+      "lat": -6.1783,
+      "lng": 106.6319
+    },
+    "keywords": ["promotor stifin tangerang", "bisnis stifin banten"],
+    "description": "Bergabung sebagai promotor STIFIn di Tangerang, area industri dan perumahan dengan demand tinggi."
+  },
+  {
+    "slug": "depok",
+    "kecamatan": "Depok Kota",
+    "kabupaten": "Depok",
+    "provinsi": "Jawa Barat",
+    "provinsiSlug": "jawa-barat",
+    "population": 2200000,
+    "demandLevel": "high",
+    "coordinates": {
+      "lat": -6.4025,
+      "lng": 106.7942
+    },
+    "keywords": ["promotor stifin depok", "bisnis stifin depok"],
+    "description": "Peluang menjadi promotor STIFIn di Depok, kota penyangga Jakarta dengan banyak keluarga muda."
+  },
+  {
+    "slug": "bogor",
+    "kecamatan": "Bogor Kota",
+    "kabupaten": "Bogor",
+    "provinsi": "Jawa Barat",
+    "provinsiSlug": "jawa-barat",
+    "population": 1100000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": -6.5950,
+      "lng": 106.8166
+    },
+    "keywords": ["promotor stifin bogor", "bisnis stifin bogor"],
+    "description": "Kesempatan menjadi promotor STIFIn di Bogor, kota hujan dengan banyak institusi pendidikan."
+  },
+  {
+    "slug": "batam",
+    "kecamatan": "Batam Kota",
+    "kabupaten": "Batam",
+    "provinsi": "Kepulauan Riau",
+    "provinsiSlug": "kepulauan-riau",
+    "population": 1200000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": 1.0456,
+      "lng": 104.0305
+    },
+    "keywords": ["promotor stifin batam", "bisnis stifin kepri"],
+    "description": "Daftar sebagai promotor STIFIn di Batam, kota industri dan perdagangan dengan ekonomi dinamis."
+  },
+  {
+    "slug": "bandar-lampung",
+    "kecamatan": "Bandar Lampung Kota",
+    "kabupaten": "Bandar Lampung",
+    "provinsi": "Lampung",
+    "provinsiSlug": "lampung",
+    "population": 1000000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": -5.3971,
+      "lng": 105.2668
+    },
+    "keywords": ["promotor stifin lampung", "bisnis stifin bandar lampung"],
+    "description": "Peluang bisnis promotor STIFIn di Bandar Lampung, gerbang Sumatera dengan potensi pasar besar."
+  },
+  {
+    "slug": "padang",
+    "kecamatan": "Padang Kota",
+    "kabupaten": "Padang",
+    "provinsi": "Sumatera Barat",
+    "provinsiSlug": "sumatera-barat",
+    "population": 900000,
+    "demandLevel": "medium",
+    "coordinates": {
+      "lat": -0.9492,
+      "lng": 100.3543
+    },
+    "keywords": ["promotor stifin padang", "bisnis stifin sumbar"],
+    "description": "Bergabung sebagai promotor STIFIn di Padang, kota budaya Minangkabau dengan masyarakat entrepreneurial."
+  },
+  {
+    "slug": "pontianak",
+    "kecamatan": "Pontianak Kota",
+    "kabupaten": "Pontianak",
+    "provinsi": "Kalimantan Barat",
+    "provinsiSlug": "kalimantan-barat",
+    "population": 600000,
+    "demandLevel": "low",
+    "coordinates": {
+      "lat": -0.0263,
+      "lng": 109.3425
+    },
+    "keywords": ["promotor stifin pontianak", "bisnis stifin kalbar"],
+    "description": "Peluang menjadi promotor STIFIn di Pontianak, kota khatulistiwa dengan ekonomi perdagangan."
+  }
+]
