@@ -1,5 +1,5 @@
 # robots.txt for promotorstifingenetic.id
-# Optimized for SEO - Valid directives only
+# Optimized for SEO compliance
 
 # Allow all search engines to crawl everything
 User-agent: *
