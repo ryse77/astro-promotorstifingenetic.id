@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   name: 'Promotor STIFIn Genetic',
   domain: 'promotorstifingenetic.id',
   url: 'https://promotorstifingenetic.id',
-  description: 'Peluang bisnis menjadi promotor STIFIn Genetic Test di seluruh Indonesia. Komisi hingga 60% dengan sistem yang terbukti.',
+  description: 'Peluang bisnis menjadi promotor STIFIn Genetic Test di seluruh Indonesia. Komisi hingga 70% dengan sistem yang terbukti.',
 
   // Social & Contact
   whatsapp: {

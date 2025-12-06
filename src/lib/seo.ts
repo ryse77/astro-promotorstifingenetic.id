@@ -23,7 +23,7 @@ export function generateDaftarSEO(location: {
 
   // Optimized description: exactly 155 characters for best SERP display
   const defaultDescription =
-    `Daftar promotor STIFIn ${kecamatan}. Komisi 60%, training gratis, income unlimited. Peluang bisnis terpercaya di ${provinsi}. Hubungi sekarang!`;
+    `Daftar promotor STIFIn ${kecamatan}. Komisi 70%, training gratis, income unlimited. Peluang bisnis terpercaya di ${provinsi}. Hubungi sekarang!`;
 
   return {
     title: `Daftar Promotor STIFIn ${kecamatan} - Peluang Bisnis ${provinsi}`,
@@ -55,7 +55,7 @@ export function generatePendaftaranSEO(location: {
 
   // Optimized description: within 150-160 character range
   const defaultDescription =
-    `Pendaftaran promotor STIFIn ${kecamatan} mudah & gratis. Proses cepat via WhatsApp. Dapatkan komisi 60% + training lengkap. Mulai sekarang!`;
+    `Pendaftaran promotor STIFIn ${kecamatan} mudah & gratis. Proses cepat via WhatsApp. Dapatkan komisi 70% + training lengkap. Mulai sekarang!`;
 
   return {
     title: `Pendaftaran Promotor STIFIn ${kecamatan} - Bergabung Sekarang`,

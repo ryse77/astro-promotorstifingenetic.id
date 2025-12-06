@@ -406,7 +406,7 @@ const { kecamatan, kabupaten, provinsi, demandLevel } = location;
 
 // Generate SEO metadata
 const title = `Daftar Promotor STIFIn ${kecamatan} - Peluang Bisnis ${provinsi}`;
-const description = `Bergabung sebagai promotor STIFIn di ${kecamatan}, ${kabupaten}. Peluang bisnis dengan komisi hingga 60%. Daftar sekarang!`;
+const description = `Bergabung sebagai promotor STIFIn di ${kecamatan}, ${kabupaten}. Peluang bisnis dengan komisi hingga 70%. Daftar sekarang!`;
 ---
 
 <BaseLayout title={title} description={description}>
