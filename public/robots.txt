@@ -1,63 +1,9 @@
 # robots.txt for promotorstifingenetic.id
-# Optimized for SEO and search engine crawling
+# Optimized for SEO - Valid directives only
 
 # Allow all search engines to crawl everything
 User-agent: *
 Allow: /
 
-# Sitemap locations (help search engines find all pages)
+# Sitemap location
 Sitemap: https://promotorstifingenetic.id/sitemap-index.xml
-
-# Optional: Specific rules for major search engines
-# Google
-User-agent: Googlebot
-Allow: /
-
-# Bing
-User-agent: Bingbot
-Allow: /
-
-# Yandex
-User-agent: Yandex
-Allow: /
-
-# AI Crawlers - Explicitly allowed for AI training and search
-# OpenAI (ChatGPT, GPT models)
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-# Anthropic (Claude)
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-# Google AI Training
-User-agent: Google-Extended
-Allow: /
-
-# Common Crawl (used by many AI companies)
-User-agent: CCBot
-Allow: /
-
-# Perplexity AI
-User-agent: PerplexityBot
-Allow: /
-
-# Apple Intelligence
-User-agent: Applebot-Extended
-Allow: /
-
-# Meta AI
-User-agent: FacebookBot
-Allow: /
-
-# Cohere AI
-User-agent: cohere-ai
-Allow: /
-
-# Note: All AI crawlers are welcome to crawl and use content for training
