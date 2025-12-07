@@ -25,7 +25,7 @@ const localBusinessSchema = location ? {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `Promotor STIFIn ${location.kecamatan}`,
-  "description": `Peluang bisnis sebagai promotor STIFIn Genetic Test di ${location.kecamatan}, ${location.provinsi}. Komisi hingga 70% dengan training gratis.`,
+  "description": `Peluang bisnis sebagai Licensed Promotor STIFIn Genetic Test di ${location.kecamatan}, ${location.provinsi}. 6 sumber penghasilan, margin minimal 300%.`,
   "url": Astro.url.href,
   "telephone": `+${SITE_CONFIG.whatsapp.number}`,
   "email": SITE_CONFIG.email,
@@ -55,7 +55,7 @@ const localBusinessSchema = location ? {
   },
   "offers": {
     "@type": "Offer",
-    "description": "Peluang bisnis promotor STIFIn dengan komisi hingga 70%",
+    "description": "Peluang bisnis Licensed Promotor STIFIn dengan 6 sumber penghasilan, margin minimal 300%",
     "priceCurrency": "IDR"
   }
 } : null;
@@ -157,10 +157,10 @@ const faqSchema = location ? {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": `Berapa komisi yang didapat promotor STIFIn di ${location.kecamatan}?`,
+      "name": `Berapa penghasilan yang didapat Licensed Promotor STIFIn di ${location.kecamatan}?`,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Komisi promotor STIFIn mencapai 70% dari setiap penjualan tes STIFIn. Ini adalah salah satu komisi tertinggi di industri tes psikologi dan genetik."
+        "text": "Licensed Promotor STIFIn memiliki 6 sumber penghasilan dengan margin minimal 300% dari modal voucher tes. Potensi penghasilan >10 juta per bulan bahkan bisa >3x UMR DKI Jakarta."
       }
     },
     {
@@ -168,15 +168,15 @@ const faqSchema = location ? {
       "name": "Apakah ada biaya untuk menjadi promotor STIFIn?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tidak ada biaya pendaftaran atau biaya tersembunyi. Anda akan mendapat training gratis dan support penuh dari tim STIFIn."
+        "text": "Ya, ada investasi awal untuk mengikuti Workshop STIFIn Level 1, Level 2, dan mendapatkan ID Aplikasi. Ini adalah investasi sekali seumur hidup untuk mendapatkan lisensi resmi."
       }
     },
     {
       "@type": "Question",
-      "name": "Apa saja benefit menjadi promotor STIFIn?",
+      "name": "Apa saja benefit menjadi Licensed Promotor STIFIn?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Benefit meliputi: komisi hingga 70%, training gratis, materi marketing lengkap, support sistem online, dan potensi penghasilan unlimited tanpa batasan."
+        "text": "Benefit meliputi: 6 sumber penghasilan (tes, private, speaker, 3 afiliasi), margin minimal 300%, ID Aplikasi seumur hidup, support marketing lengkap, dan potensi penghasilan >10 juta/bulan."
       }
     },
     {

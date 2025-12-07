@@ -4,8 +4,11 @@ import { generateDaftarSEO } from '@/lib/seo';
 import citiesData from '@/lib/data/cities.json';
 import { getLocationIndex, getTemplateType } from '@/lib/templates/index';
 import { getTemplateContent } from '@/lib/templates/contentVariations';
+import IncomeBreakdownSection from '@/components/IncomeBreakdownSection.astro';
+import WhatYouGetSection from '@/components/WhatYouGetSection.astro';
+import BenefitsSection from '@/components/BenefitsSection.astro';
 
-// Generate static paths untuk semua lokasi dengan 3-level structure
+// Generate static paths untuk semua lokasi
 export async function getStaticPaths() {
   return citiesData.map((location) => ({
     params: {
@@ -17,7 +20,7 @@ export async function getStaticPaths() {
 }
 
 const { location } = Astro.props;
-const { kecamatan, kabupaten, provinsi, demandLevel } = location;
+const { kecamatan, kabupaten, provinsi } = location;
 
 // Get template based on location index
 const locationIndex = getLocationIndex(citiesData, location.slug);
@@ -38,195 +41,166 @@ const seo = generateDaftarSEO(location);
   heroSubtitle={templateContent.heroSubtitle}
   heroDescription={templateContent.heroDescription}
 >
-  <!-- Main Content Section -->
-  <section class="py-16 md:py-24 bg-white">
+  <!-- Intro Section -->
+  <section class="py-16 md:py-20 bg-gradient-to-b from-white to-primary-50">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <!-- Intro -->
-        <div class="mb-12">
+        <div class="text-center mb-12">
+          <div class="inline-block bg-primary-100 text-primary-700 px-6 py-2 rounded-full text-sm font-semibold mb-4">
+            Peluang Bisnis di {kecamatan}
+          </div>
           <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
             {templateContent.mainSectionTitle}
           </h2>
-          <p class="text-lg text-gray-700 leading-relaxed mb-4">
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
             {templateContent.mainContent}
           </p>
-          <p class="text-lg text-gray-700 leading-relaxed">
-            Sebagai Licensed Promotor STIFIn, Anda berpotensi mendapatkan penghasilan >10 juta per bulan
-            dari 6 sumber penghasilan yang bisa dikembangkan sesuai kemampuan Anda.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Income Breakdown Section -->
+  <IncomeBreakdownSection location={kecamatan} />
+
+  <!-- What You Get Section -->
+  <WhatYouGetSection variant="income" />
+
+  <!-- Why STIFIn Section -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
+            Mengapa Menjadi Licensed Promotor STIFIn?
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1: Income -->
+          <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-3xl">
+              💰
+            </div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Potensi Pendapatan >10 Juta/Bulan</h3>
+            <p class="text-gray-700">
+              Dari layanan tes dan konsultasi yang terus berkembang di {provinsi}
+            </p>
+          </div>
+
+          <!-- Card 2: Flexibility -->
+          <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-3xl">
+              ⏰
+            </div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Kerja FLEKSIBEL</h3>
+            <p class="text-gray-700">
+              Bebas waktu & tempat, bisa part-time atau full-time
+            </p>
+          </div>
+
+          <!-- Card 3: Impact -->
+          <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-3xl">
+              ❤️
+            </div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Dampak Sosial</h3>
+            <p class="text-gray-700">
+              Bantu orang menemukan potensi terbaik mereka
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Can Join Section -->
+  <section class="py-16 md:py-20 bg-gradient-to-r from-secondary-50 to-primary-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10 text-center">
+          <div class="inline-block bg-primary-100 text-primary-700 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+            Terbuka untuk Semua
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Siapa Pun Bisa Bergabung!
+          </h3>
+          <p class="text-lg text-gray-700 mb-6">
+            Tidak ada batasan usia atau latar belakang pendidikan. Siapa pun yang berminat pada pengembangan diri dan ingin membantu orang lain menemukan potensi terbaiknya dapat menjadi Licensed Promotor STIFIn di {kecamatan}.
           </p>
-        </div>
-
-        <!-- 6 Sumber Penghasilan -->
-        <div class="mb-12 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-8">
-          <h3 class="text-2xl font-heading font-bold text-gray-900 mb-6">
-            6 Sumber Penghasilan Licensed Promotor STIFIn
-          </h3>
-          <div class="space-y-4">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-10 h-10 bg-primary-600 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-gray-900 mb-1">Tes STIFIn Fingerprint</h4>
-                <p class="text-gray-700">Margin keuntungan minimal 300% dari modal voucher STIFIn setiap kali melakukan tes.</p>
-              </div>
-            </div>
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-10 h-10 bg-primary-600 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-gray-900 mb-1">Sesi Private STIFIn</h4>
-                <p class="text-gray-700">Fee konsultasi personal minimal Rp. 250.000 per sesi per orang.</p>
-              </div>
-            </div>
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-10 h-10 bg-primary-600 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-gray-900 mb-1">Public Speaker</h4>
-                <p class="text-gray-700">Fee honor ketika diundang sebagai narasumber tentang konsep STIFIn dan kepribadian.</p>
-              </div>
-            </div>
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-10 h-10 bg-primary-600 text-white rounded-lg flex items-center justify-center font-bold">
-                4
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-gray-900 mb-1">Afiliasi Tes STIFIn</h4>
-                <p class="text-gray-700">Komisi dari setiap referral klien yang melakukan tes STIFIn.</p>
-              </div>
-            </div>
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-10 h-10 bg-primary-600 text-white rounded-lg flex items-center justify-center font-bold">
-                5
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-gray-900 mb-1">Afiliasi Workshop STIFIn</h4>
-                <p class="text-gray-700">Komisi ketika mereferensikan seseorang untuk mengikuti Workshop STIFIn.</p>
-              </div>
-            </div>
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-10 h-10 bg-primary-600 text-white rounded-lg flex items-center justify-center font-bold">
-                6
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-gray-900 mb-1">Afiliasi Promotor STIFIn</h4>
-                <p class="text-gray-700">Komisi rekrutmen ketika mereferensikan seseorang menjadi Licensed Promotor STIFIn.</p>
-              </div>
-            </div>
+          <div class="flex flex-wrap justify-center gap-3 text-sm">
+            <span class="bg-primary-50 text-primary-700 px-4 py-2 rounded-full font-semibold">✓ Profesional</span>
+            <span class="bg-primary-50 text-primary-700 px-4 py-2 rounded-full font-semibold">✓ Ibu Rumah Tangga</span>
+            <span class="bg-primary-50 text-primary-700 px-4 py-2 rounded-full font-semibold">✓ Mahasiswa</span>
+            <span class="bg-primary-50 text-primary-700 px-4 py-2 rounded-full font-semibold">✓ Pensiunan</span>
+            <span class="bg-primary-50 text-primary-700 px-4 py-2 rounded-full font-semibold">✓ Pengusaha</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- 4 Tahap Menjadi Promotor -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8">
-          <h3 class="text-2xl font-heading font-bold text-gray-900 mb-6">
-            4 Tahap Menjadi Licensed Promotor STIFIn
-          </h3>
-          <div class="space-y-4">
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
-                1
-              </div>
-              <p class="text-gray-700 pt-1">
-                <strong>WSL1</strong> - Workshop STIFIn Level 1. Sertifikasi selama 1 hari.
-              </p>
-            </div>
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
-                2
-              </div>
-              <p class="text-gray-700 pt-1">
-                <strong>WSL2</strong> - Workshop STIFIn Level 2. Sertifikasi dan ujian selama 2-3 hari.
-              </p>
-            </div>
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
-                3
-              </div>
-              <p class="text-gray-700 pt-1">
-                <strong>ID Aplikasi</strong> - Memiliki ID Aplikasi Tes STIFIn pribadi untuk seumur hidup.
-              </p>
-            </div>
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
-                4
-              </div>
-              <p class="text-gray-700 pt-1">
-                <strong>Instalasi</strong> - Instalasi aplikasi tes STIFIn & training penggunaan aplikasi.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- FAQ -->
-        <div class="mb-12">
-          <h3 class="text-2xl font-heading font-bold text-gray-900 mb-6">
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
             Pertanyaan yang Sering Diajukan
-          </h3>
-          <div class="space-y-4">
-            <div class="border-b border-gray-200 pb-4">
-              <h4 class="font-semibold text-gray-900 mb-2">Berapa potensi penghasilan per bulan?</h4>
-              <p class="text-gray-700">
-                Potensi penghasilan >10 juta per bulan bahkan bisa >3x UMR DKI Jakarta, tergantung aktivitas
-                dan jumlah klien yang Anda layani di {kecamatan} dan sekitarnya.
-              </p>
-            </div>
-            <div class="border-b border-gray-200 pb-4">
-              <h4 class="font-semibold text-gray-900 mb-2">Apakah ada biaya untuk menjadi promotor?</h4>
-              <p class="text-gray-700">
-                Ya, ada investasi awal untuk mengikuti Workshop STIFIn Level 1, Level 2, dan ID Aplikasi.
-                Ini adalah investasi sekali seumur hidup. Detail biaya dapat ditanyakan via WhatsApp.
-              </p>
-            </div>
-            <div class="border-b border-gray-200 pb-4">
-              <h4 class="font-semibold text-gray-900 mb-2">Apakah harus full time?</h4>
-              <p class="text-gray-700">
-                Tidak. Bisnis ini sangat fleksibel. Anda bisa menjalankannya sebagai pekerjaan sampingan
-                atau full time sesuai waktu yang Anda miliki.
-              </p>
-            </div>
-            <div class="border-b border-gray-200 pb-4">
-              <h4 class="font-semibold text-gray-900 mb-2">Saya di {kecamatan}, apakah bisa melayani area lain?</h4>
-              <p class="text-gray-700">
-                Tentu! Anda bisa melayani seluruh wilayah {kecamatan}, {kabupaten}, bahkan seluruh {provinsi}
-                dan Indonesia. Tidak ada batasan territory.
-              </p>
-            </div>
-            <div class="border-b border-gray-200 pb-4">
-              <h4 class="font-semibold text-gray-900 mb-2">Apakah perlu background pendidikan psikologi?</h4>
-              <p class="text-gray-700">
-                Tidak perlu! Siapa pun dengan latar belakang apapun bisa menjadi Licensed Promotor STIFIn.
-                Yang penting adalah minat untuk membantu orang mengenali potensinya.
-              </p>
-            </div>
-          </div>
+          </h2>
         </div>
 
-        <!-- Demand Level Indicator -->
-        {demandLevel === 'high' && (
-          <div class="bg-green-50 border-l-4 border-green-600 p-6 rounded-lg">
-            <div class="flex items-start">
-              <div class="flex-shrink-0">
-                <svg class="h-6 w-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div class="ml-3">
-                <h3 class="text-sm font-medium text-green-800">
-                  Demand Tinggi di {kecamatan}!
-                </h3>
-                <div class="mt-2 text-sm text-green-700">
-                  <p>
-                    Area {kecamatan} memiliki demand tinggi untuk layanan tes genetic STIFIn.
-                    Ini adalah waktu yang tepat untuk bergabung sebagai Licensed Promotor!
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div class="space-y-6">
+          <!-- FAQ 1 -->
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h4 class="font-bold text-lg text-gray-900 mb-3">
+              Berapa penghasilan yang didapat Licensed Promotor STIFIn di {kecamatan}?
+            </h4>
+            <p class="text-gray-700">
+              Licensed Promotor STIFIn memiliki 6 sumber penghasilan dengan margin minimal 300% dari modal voucher tes. Potensi penghasilan >10 juta per bulan bahkan bisa >3x UMR DKI Jakarta, tergantung aktivitas dan jumlah klien yang Anda layani.
+            </p>
           </div>
-        )}
+
+          <!-- FAQ 2 -->
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h4 class="font-bold text-lg text-gray-900 mb-3">
+              Apakah ada biaya untuk menjadi promotor STIFIn?
+            </h4>
+            <p class="text-gray-700">
+              Ya, ada investasi awal untuk mengikuti Workshop STIFIn Level 1, Level 2, dan mendapatkan ID Aplikasi. Ini adalah investasi sekali seumur hidup untuk mendapatkan lisensi resmi. Detail biaya dapat ditanyakan via WhatsApp.
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h4 class="font-bold text-lg text-gray-900 mb-3">
+              Siapa yang bisa menjadi Licensed Promotor STIFIn?
+            </h4>
+            <p class="text-gray-700">
+              Siapa pun yang berminat pada pengembangan diri dan ingin membantu orang lain menemukan potensi terbaiknya dapat menjadi Licensed Promotor STIFIn, tanpa batasan usia maupun latar belakang pendidikan tertentu.
+            </p>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h4 class="font-bold text-lg text-gray-900 mb-3">
+              Saya di {kecamatan}, apakah bisa melayani area lain?
+            </h4>
+            <p class="text-gray-700">
+              Tentu! Anda bisa melayani seluruh wilayah {kecamatan}, {kabupaten}, bahkan seluruh {provinsi} dan Indonesia. Tidak ada batasan territory.
+            </p>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h4 class="font-bold text-lg text-gray-900 mb-3">
+              Berapa lama proses menjadi Licensed Promotor?
+            </h4>
+            <p class="text-gray-700">
+              Workshop Level 1 selama 1 hari, Level 2 selama 2-3 hari. Setelah lulus ujian WSL2, Anda langsung mendapat ID Aplikasi dan bisa mulai melayani klien di {kecamatan}.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -23,7 +23,7 @@ export function generateDaftarSEO(location: {
 
   // Optimized description: exactly 155 characters for best SERP display
   const defaultDescription =
-    `Daftar promotor STIFIn ${kecamatan}. Komisi 70%, training gratis, income unlimited. Peluang bisnis terpercaya di ${provinsi}. Hubungi sekarang!`;
+    `Daftar Licensed Promotor STIFIn ${kecamatan}. 6 sumber penghasilan, margin 300%, potensi >10 juta/bulan. Info lengkap ${provinsi}!`;
 
   return {
     title: `Daftar Promotor STIFIn ${kecamatan} - Peluang Bisnis ${provinsi}`,
@@ -35,7 +35,7 @@ export function generateDaftarSEO(location: {
       `peluang usaha ${kecamatan.toLowerCase()}`,
       'mitra stifin',
       'agen stifin',
-      'komisi 60 persen',
+      'margin 300 persen',
     ],
   };
 }
@@ -55,7 +55,7 @@ export function generatePendaftaranSEO(location: {
 
   // Optimized description: within 150-160 character range
   const defaultDescription =
-    `Pendaftaran promotor STIFIn ${kecamatan} mudah & gratis. Proses cepat via WhatsApp. Dapatkan komisi 70% + training lengkap. Mulai sekarang!`;
+    `Pendaftaran Licensed Promotor STIFIn ${kecamatan}. 4 tahap: WSL1, WSL2, ID Aplikasi, Instalasi. Info investasi via WhatsApp ${provinsi}!`;
 
   return {
     title: `Pendaftaran Promotor STIFIn ${kecamatan} - Bergabung Sekarang`,

@@ -22,7 +22,7 @@ function generateKeywords(kecamatan, kabupaten, provinsi) {
 
 // Fungsi untuk generate description
 function generateDescription(kecamatan, kabupaten) {
-  return `Bergabung sebagai promotor STIFIn di ${kecamatan}, ${kabupaten}. Peluang bisnis dengan komisi hingga 70%. Training gratis, support penuh!`;
+  return `Daftar Licensed Promotor STIFIn ${kecamatan}. 6 sumber penghasilan, margin 300%, potensi >10 juta/bulan. Info lengkap ${kabupaten}!`;
 }
 
 // Fungsi untuk menentukan demand level (bisa dikustomisasi nanti)

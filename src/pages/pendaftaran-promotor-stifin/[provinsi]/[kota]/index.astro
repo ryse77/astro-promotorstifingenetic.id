@@ -4,8 +4,9 @@ import { generatePendaftaranSEO } from '@/lib/seo';
 import citiesData from '@/lib/data/cities.json';
 import { getLocationIndex, getTemplateType } from '@/lib/templates/index';
 import { getTemplateContent } from '@/lib/templates/contentVariations';
+import WhatYouGetSection from '@/components/WhatYouGetSection.astro';
 
-// Generate static paths untuk semua lokasi dengan 3-level structure
+// Generate static paths untuk semua lokasi
 export async function getStaticPaths() {
   return citiesData.map((location) => ({
     params: {
@@ -17,7 +18,7 @@ export async function getStaticPaths() {
 }
 
 const { location } = Astro.props;
-const { kecamatan, kabupaten, provinsi, demandLevel } = location;
+const { kecamatan, kabupaten, provinsi } = location;
 
 // Get template based on location index
 const locationIndex = getLocationIndex(citiesData, location.slug);
@@ -38,177 +39,280 @@ const seo = generatePendaftaranSEO(location);
   heroSubtitle={templateContent.heroSubtitle}
   heroDescription={templateContent.heroDescription}
 >
-  <!-- Proses Pendaftaran Section -->
-  <section class="py-16 md:py-24 bg-white">
+  <!-- Intro Section -->
+  <section class="py-16 md:py-20 bg-gradient-to-b from-white to-primary-50">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <!-- Intro -->
-        <div class="mb-12 text-center">
+        <div class="text-center mb-12">
+          <div class="inline-block bg-primary-100 text-primary-700 px-6 py-2 rounded-full text-sm font-semibold mb-4">
+            Proses Pendaftaran di {kecamatan}
+          </div>
           <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
             {templateContent.mainSectionTitle}
           </h2>
-          <p class="text-lg text-gray-700 leading-relaxed">
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
             {templateContent.mainContent}
           </p>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Step by Step Process -->
-        <div class="space-y-8 mb-12">
-          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-primary-50 to-primary-100 rounded-xl p-8">
+  <!-- 4 Step Process -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+            4 Langkah Menjadi Licensed Promotor STIFIn
+          </h2>
+          <p class="text-lg text-gray-600">
+            Proses yang simple dan terstruktur untuk memulai karir Anda
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 hover:shadow-lg transition-all">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-primary-600 text-white rounded-xl flex items-center justify-center font-bold text-2xl">
+              <div class="w-20 h-20 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-2xl flex items-center justify-center font-bold text-3xl shadow-lg">
                 1
               </div>
             </div>
             <div class="flex-1">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Hubungi Kami via WhatsApp</h3>
-              <p class="text-gray-700 mb-3">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Hubungi Kami via WhatsApp</h3>
+              <p class="text-gray-700 mb-4 text-lg">
                 Klik tombol "Hubungi via WhatsApp" di halaman ini untuk memulai percakapan dengan tim kami.
                 Sampaikan bahwa Anda tertarik untuk menjadi promotor STIFIn di {kecamatan}.
               </p>
-              <ul class="list-disc list-inside text-gray-600 space-y-1">
-                <li>Response cepat dalam hitungan menit</li>
-                <li>Konsultasi tentang peluang Licensed Promotor STIFIn</li>
-                <li>Jawaban atas semua pertanyaan Anda</li>
-              </ul>
+              <div class="bg-white rounded-lg p-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Yang akan Anda dapatkan:</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start space-x-2">
+                    <span class="text-primary-600 mt-1">✓</span>
+                    <span>Response cepat dalam hitungan menit</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <span class="text-primary-600 mt-1">✓</span>
+                    <span>Konsultasi GRATIS tentang peluang Licensed Promotor STIFIn</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <span class="text-primary-600 mt-1">✓</span>
+                    <span>Info detail investasi dan jadwal workshop terdekat</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-secondary-50 to-secondary-100 rounded-xl p-8">
+          <!-- Step 2 -->
+          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-secondary-50 to-secondary-100 rounded-2xl p-8 hover:shadow-lg transition-all">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-secondary-600 text-white rounded-xl flex items-center justify-center font-bold text-2xl">
+              <div class="w-20 h-20 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-2xl flex items-center justify-center font-bold text-3xl shadow-lg">
                 2
               </div>
             </div>
             <div class="flex-1">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Workshop STIFIn Level 1 (WSL1)</h3>
-              <p class="text-gray-700 mb-3">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Workshop STIFIn Level 1 (WSL1)</h3>
+              <p class="text-gray-700 mb-4 text-lg">
                 Ikuti Workshop STIFIn Level 1 selama 1 hari untuk memahami konsep dasar STIFIn,
                 9 personality genetik, dan sirkulasi mesin kecerdasan.
               </p>
-              <ul class="list-disc list-inside text-gray-600 space-y-1">
-                <li>Sertifikasi WSL1 resmi</li>
-                <li>Materi komprehensif tentang STIFIn</li>
-                <li>Dipandu trainer berpengalaman</li>
-              </ul>
+              <div class="bg-white rounded-lg p-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Materi Workshop Level 1:</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start space-x-2">
+                    <span class="text-secondary-600 mt-1">📚</span>
+                    <span>Mesin Kecerdasan & Personality Genetik</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <span class="text-secondary-600 mt-1">📚</span>
+                    <span>Sirkulasi STIFIn & Golden Rule STIFIn</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <span class="text-secondary-600 mt-1">🎖️</span>
+                    <span>Ujian WSL1 & Sertifikat Elektronik</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-primary-50 to-primary-100 rounded-xl p-8">
+          <!-- Step 3 -->
+          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 hover:shadow-lg transition-all">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-primary-600 text-white rounded-xl flex items-center justify-center font-bold text-2xl">
+              <div class="w-20 h-20 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-2xl flex items-center justify-center font-bold text-3xl shadow-lg">
                 3
               </div>
             </div>
             <div class="flex-1">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Ikuti Training Online</h3>
-              <p class="text-gray-700 mb-3">
-                Dapatkan training komprehensif tentang produk STIFIn, teknik penjualan, dan sistem bisnis.
-                Training dilakukan secara online dengan jadwal fleksibel.
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Workshop STIFIn Level 2 (WSL2)</h3>
+              <p class="text-gray-700 mb-4 text-lg">
+                Lanjutkan ke Workshop STIFIn Level 2 selama 2-3 hari untuk memperdalam materi,
+                praktik analisis hasil tes, dan lulus ujian kompetensi.
               </p>
-              <ul class="list-disc list-inside text-gray-600 space-y-1">
-                <li>Materi training lengkap dan mudah dipahami</li>
-                <li>Dipandu oleh trainer berpengalaman</li>
-                <li>Sertifikat resmi setelah selesai training</li>
-              </ul>
+              <div class="bg-white rounded-lg p-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Materi Workshop Level 2:</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start space-x-2">
+                    <span class="text-primary-600 mt-1">📚</span>
+                    <span>Konsep STIFIn Level Advance</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <span class="text-primary-600 mt-1">💼</span>
+                    <span>Praktik langsung analisis hasil tes</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <span class="text-primary-600 mt-1">✅</span>
+                    <span>Ujian kompetensi Licensed Promotor</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-secondary-50 to-secondary-100 rounded-xl p-8">
+          <!-- Step 4 -->
+          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-secondary-50 to-secondary-100 rounded-2xl p-8 hover:shadow-lg transition-all">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-secondary-600 text-white rounded-xl flex items-center justify-center font-bold text-2xl">
+              <div class="w-20 h-20 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-2xl flex items-center justify-center font-bold text-3xl shadow-lg">
                 4
               </div>
             </div>
             <div class="flex-1">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Mulai Bisnis Anda!</h3>
-              <p class="text-gray-700 mb-3">
-                Setelah menyelesaikan training, Anda siap memulai bisnis sebagai promotor STIFIn di {kecamatan}.
-                Dapatkan akses ke sistem, marketing tools, dan support tim.
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Dapatkan ID Aplikasi & Instalasi</h3>
+              <p class="text-gray-700 mb-4 text-lg">
+                Setelah lulus WSL2, dapatkan ID Aplikasi Tes STIFIn pribadi seumur hidup dan
+                instalasi aplikasi tes STIFIn dengan training penggunaan aplikasi.
               </p>
-              <ul class="list-disc list-inside text-gray-600 space-y-1">
-                <li>Dashboard promotor untuk tracking transaksi</li>
-                <li>Marketing material gratis (flyer, brosur digital)</li>
-                <li>Support tim 24/7 via WhatsApp Group</li>
-              </ul>
+              <div class="bg-white rounded-lg p-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Yang Anda dapatkan:</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start space-x-2">
+                    <span class="text-secondary-600 mt-1">💻</span>
+                    <span>ID Aplikasi pribadi seumur hidup (no renewal fee)</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <span class="text-secondary-600 mt-1">🖐️</span>
+                    <span>Scanner USB Fingerprint + instalasi dibantu tim</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <span class="text-secondary-600 mt-1">🎯</span>
+                    <span>Training penggunaan aplikasi untuk tes klien</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- 4 Tahap Menjadi Promotor -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8">
-          <h3 class="text-2xl font-heading font-bold text-gray-900 mb-6">
-            4 Tahap Menjadi Promotor STIFIn
+        <!-- Success Badge -->
+        <div class="mt-12 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 rounded-2xl p-8 text-white text-center">
+          <h3 class="text-2xl font-bold mb-3">🎉 Selamat! Anda Sudah Siap Melayani Klien!</h3>
+          <p class="text-lg text-white/90">
+            Setelah Step 4, Anda resmi menjadi Licensed Promotor STIFIn di {kecamatan} dan bisa langsung mulai melayani klien dengan 6 sumber penghasilan!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get Section -->
+  <WhatYouGetSection variant="professional" />
+
+  <!-- Timeline Estimate -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 md:p-10">
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+            Berapa Lama Prosesnya?
           </h3>
-          <div class="space-y-4">
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
-                1
-              </div>
-              <p class="text-gray-700 pt-1">Mengikuti Workshop STIFIn Level 1. Sertifikasi Selama 1 Hari.</p>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-primary-600 mb-2">1 Hari</div>
+              <div class="text-gray-700">Workshop Level 1</div>
             </div>
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
-                2
-              </div>
-              <p class="text-gray-700 pt-1">Mengikuti Workshop STIFIn Level 2. Sertifikasi dan ujian Selama 2-3 Hari.</p>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-primary-600 mb-2">2-3 Hari</div>
+              <div class="text-gray-700">Workshop Level 2</div>
             </div>
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
-                3
-              </div>
-              <p class="text-gray-700 pt-1">Memiliki ID Aplikasi Tes STIFIn & Menjadi Milik Pribadi Untuk Melakukan Tes Sidik Jari STIFIN 1x seumur hidup.</p>
-            </div>
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
-                4
-              </div>
-              <p class="text-gray-700 pt-1">Instalasi Aplikasi Tes STIFIN & Training Penggunaan Aplikasi Untuk Tes STIFIN.</p>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-primary-600 mb-2">Langsung</div>
+              <div class="text-gray-700">Mulai Melayani Klien</div>
             </div>
           </div>
+          <p class="text-center text-gray-700 mt-6">
+            Setelah lulus ujian WSL2, Anda langsung mendapat ID Aplikasi dan bisa mulai melayani klien di {kecamatan}!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+            Pertanyaan Seputar Pendaftaran
+          </h2>
         </div>
 
-        <!-- Success Stories (optional) -->
-        <div class="mb-12">
-          <h3 class="text-2xl font-heading font-bold text-gray-900 mb-6 text-center">
-            Bergabunglah dengan Promotor Sukses Lainnya
-          </h3>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-white border-2 border-gray-200 rounded-xl p-6">
-              <div class="flex items-start space-x-4 mb-4">
-                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-gray-900">Ibu Sarah - {provinsi}</h4>
-                  <p class="text-sm text-gray-600">Promotor sejak 2023</p>
-                </div>
-              </div>
-              <p class="text-gray-700 italic">
-                "Saya awalnya ragu, tapi setelah mengikuti training dan melihat hasilnya, saya sangat bersyukur.
-                Income saya bertambah signifikan sambil membantu banyak orang!"
-              </p>
-            </div>
+        <div class="space-y-6">
+          <!-- FAQ 1 -->
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <h4 class="font-bold text-lg text-gray-900 mb-3">
+              Berapa investasi awal untuk menjadi promotor?
+            </h4>
+            <p class="text-gray-700">
+              Ada investasi awal untuk mengikuti Workshop STIFIn Level 1, Level 2, dan mendapatkan ID Aplikasi.
+              Ini adalah investasi sekali seumur hidup untuk mendapatkan lisensi resmi. Detail biaya dapat ditanyakan via WhatsApp untuk info terbaru.
+            </p>
+          </div>
 
-            <div class="bg-white border-2 border-gray-200 rounded-xl p-6">
-              <div class="flex items-start space-x-4 mb-4">
-                <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-gray-900">Bapak Andi - {kabupaten}</h4>
-                  <p class="text-sm text-gray-600">Promotor sejak 2022</p>
-                </div>
-              </div>
-              <p class="text-gray-700 italic">
-                "Bisnis paruh waktu yang menguntungkan. Saya bisa tetap fokus dengan pekerjaan utama,
-                tapi mendapat income tambahan yang lumayan dari STIFIn."
-              </p>
-            </div>
+          <!-- FAQ 2 -->
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <h4 class="font-bold text-lg text-gray-900 mb-3">
+              Apakah ada ujian untuk menjadi promotor?
+            </h4>
+            <p class="text-gray-700">
+              Ya, ada ujian kompetensi di akhir Workshop Level 2. Ujian ini memastikan Anda memahami konsep STIFIn
+              dengan baik dan siap memberikan layanan berkualitas kepada klien. Jangan khawatir, tim kami akan membantu Anda mempersiapkan diri!
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <h4 class="font-bold text-lg text-gray-900 mb-3">
+              Apakah aplikasi STIFIn bisa diinstal di Mac/Apple?
+            </h4>
+            <p class="text-gray-700">
+              Saat ini aplikasi tes STIFIn hanya support untuk Windows (belum support macOS/Apple).
+              Proses instalasi di laptop Windows akan dibantu langsung oleh Tim STIFIn Genetic.
+            </p>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <h4 class="font-bold text-lg text-gray-900 mb-3">
+              Kapan saya bisa mulai melayani klien di {kecamatan}?
+            </h4>
+            <p class="text-gray-700">
+              Setelah lulus ujian WSL2 dan mendapatkan ID Aplikasi, Anda langsung bisa mulai melayani klien!
+              Tidak ada masa tunggu atau probation period. Anda bisa langsung praktik di {kecamatan}, {kabupaten}, bahkan seluruh {provinsi}.
+            </p>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <h4 class="font-bold text-lg text-gray-900 mb-3">
+              Apakah ID Aplikasi perlu diperpanjang setiap tahun?
+            </h4>
+            <p class="text-gray-700">
+              TIDAK! ID Aplikasi Anda berlaku seumur hidup tanpa biaya perpanjangan. Sekali investasi, Anda bisa melayani klien selamanya.
+              Ini yang membuat Licensed Promotor STIFIn sangat menguntungkan dalam jangka panjang.
+            </p>
           </div>
         </div>
       </div>
