@@ -1,0 +1,175 @@
+---
+// Social Proof Popup Component
+// Menampilkan notifikasi orang yang baru mendaftar untuk meningkatkan trust & FOMO
+---
+
+<div
+  id="social-proof-popup"
+  class="hidden fixed bottom-4 left-4 md:bottom-6 md:left-6 z-50 max-w-sm"
+>
+  <div class="bg-white rounded-xl shadow-2xl p-4 border-l-4 border-green-600 animate-slide-up">
+    <div class="flex items-start space-x-3">
+      <!-- Avatar -->
+      <div class="flex-shrink-0">
+        <div
+          id="popup-avatar"
+          class="w-12 h-12 bg-gradient-to-br from-green-600 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg overflow-hidden"
+        >
+          <!-- Will be populated by JS -->
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-semibold text-gray-900" id="popup-text">
+          <!-- Will be populated by JS -->
+        </p>
+        <p class="text-xs text-gray-500 mt-1">
+          <span id="popup-time">Baru saja</span>
+        </p>
+      </div>
+
+      <!-- Close button -->
+      <button
+        id="close-popup"
+        class="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors"
+        aria-label="Tutup notifikasi"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { generatePopupText, type SocialProofEntry } from '@/lib/data/social-proof';
+
+  let popupTimeout: ReturnType<typeof setTimeout>;
+  let hideTimeout: ReturnType<typeof setTimeout>;
+  let isPopupVisible = false;
+
+  // Generate avatar content (photo or initial)
+  function generateAvatar(entry: SocialProofEntry): string {
+    if (entry.avatar) {
+      // Use custom photo
+      return `<img src="${entry.avatar}" alt="${entry.name}" class="w-full h-full object-cover" loading="lazy" />`;
+    } else {
+      // Generate initial from name
+      const initial = entry.name.charAt(0).toUpperCase();
+      return initial;
+    }
+  }
+
+  function showPopup() {
+    if (isPopupVisible) return;
+
+    const popup = document.getElementById('social-proof-popup');
+    const textEl = document.getElementById('popup-text');
+    const avatarEl = document.getElementById('popup-avatar');
+
+    if (!popup || !textEl || !avatarEl) return;
+
+    // Generate random data
+    const { text, entry } = generatePopupText();
+
+    // Update content
+    textEl.textContent = text;
+    avatarEl.innerHTML = generateAvatar(entry);
+
+    // Show popup
+    popup.classList.remove('hidden');
+    isPopupVisible = true;
+
+    // Auto hide after 6 seconds
+    hideTimeout = setTimeout(() => {
+      hidePopup();
+    }, 6000);
+
+    // Schedule next popup (random between 45-75 seconds)
+    const nextDelay = 45000 + Math.random() * 30000;
+    popupTimeout = setTimeout(showPopup, nextDelay);
+  }
+
+  function hidePopup() {
+    const popup = document.getElementById('social-proof-popup');
+    if (!popup) return;
+
+    popup.classList.add('animate-fade-out');
+
+    setTimeout(() => {
+      popup.classList.add('hidden');
+      popup.classList.remove('animate-fade-out', 'animate-slide-up');
+      isPopupVisible = false;
+    }, 300);
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  function init() {
+    // Show first popup after 8 seconds
+    popupTimeout = setTimeout(showPopup, 8000);
+
+    // Close button handler
+    const closeBtn = document.getElementById('close-popup');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        clearTimeout(hideTimeout);
+        hidePopup();
+      });
+    }
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+      clearTimeout(popupTimeout);
+      clearTimeout(hideTimeout);
+    });
+  }
+</script>
+
+<style>
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+
+  .animate-fade-out {
+    animation: fade-out 0.3s ease-out;
+  }
+
+  /* Mobile optimization */
+  @media (max-width: 640px) {
+    #social-proof-popup {
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+    }
+  }
+</style>
