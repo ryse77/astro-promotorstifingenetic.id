@@ -15,14 +15,14 @@ export const socialProofData: SocialProofEntry[] = [
   // ========================================
 
   {
-    name: "Alvin Prasetyo",
+    name: "Ari Wibowo",
     city: "Jakarta Selatan",
-    avatar: null, // Akan generate avatar "A" otomatis
+    avatar: "/images/avatars/ari.png", // Custom photo
   },
   {
-    name: "Budi Santoso",
+    name: "Wisnu Pratama",
     city: "Surabaya",
-    avatar: null,
+    avatar: "/images/avatars/wisnu.png", // Custom photo
   },
   {
     name: "Citra Dewi",
