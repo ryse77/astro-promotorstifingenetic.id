@@ -1,0 +1,630 @@
+---
+import Hero from '@/components/Hero.astro';
+import SEOHead from '@/components/SEOHead.astro';
+import SchemaOrg from '@/components/SchemaOrg.astro';
+import { SITE_CONFIG } from '@/lib/constants';
+import { generateGeneralWhatsAppURL } from '@/lib/whatsapp';
+import '@/styles/global.css';
+
+const waUrl = generateGeneralWhatsAppURL();
+const pageTitle = 'Peluang Promotor STIFIn';
+const description = SITE_CONFIG.description;
+---
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <SEOHead title={pageTitle} description={description} schemaType="Organization" />
+    <SchemaOrg type="Organization" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-008R0THXPL"></script>
+    <script>
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-008R0THXPL');
+      `}
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <Hero
+        title="Official Promotor STIFIn Genetic"
+        subtitle="Raih Income 10 Juta/bulan dari Bisnis Tes Minat Bakat."
+        description="Promotor STIFIn Genetic ID adalah website resmi untuk pendaftaran Promotor STIFIn dan Tes STIFIn di Indonesia."
+        ctaText="Ambil Peluang Ini Sekarang!"
+        ctaUrl="#cta-bottom"
+      />
+
+  <!-- Announcement Banner -->
+  <section class="py-4 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-center text-white">
+        <p class="text-sm md:text-base font-semibold">
+          🎉 PENDAFTARAN PROMOTOR STIFIn SE-INDONESIA DIBUKA! 🎉
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opportunity Intro Section -->
+  <section class="py-16 md:py-20 bg-gradient-to-b from-white to-primary-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block bg-primary-100 text-primary-700 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+          Peluang Bisnis Fleksibel
+        </div>
+        <h2 class="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-6">
+          Wujudkan Penghasilan 10 Juta+ Per Bulan Sambil Membantu Sesama
+        </h2>
+        <p class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
+          Bergabunglah dengan tim <strong>Promotor STIFIn Genetic Indonesia</strong> dan jadilah bagian dari
+          misi besar membantu ribuan orang menemukan potensi terbaik mereka melalui teknologi
+          <strong>tes sidik jari STIFIn</strong>.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+          <div class="bg-white rounded-xl shadow-md p-6">
+            <div class="text-4xl mb-3">💰</div>
+            <h3 class="font-bold text-xl text-gray-900 mb-2">Pendapatan Menjanjikan</h3>
+            <p class="text-gray-600">Potensi income >10 juta/bulan dari tes & konsultasi</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-md p-6">
+            <div class="text-4xl mb-3">⏰</div>
+            <h3 class="font-bold text-xl text-gray-900 mb-2">Waktu Fleksibel</h3>
+            <p class="text-gray-600">Atur jadwal sendiri, kerja dari mana saja</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-md p-6">
+            <div class="text-4xl mb-3">❤️</div>
+            <h3 class="font-bold text-xl text-gray-900 mb-2">Dampak Sosial</h3>
+            <p class="text-gray-600">Bantu orang temukan jati diri dan potensi mereka</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is STIFIn Promotor -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center space-x-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <span>Peran Penting</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
+              Apa Itu Promotor STIFIn?
+            </h2>
+            <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+              Promotor STIFIn adalah <strong>praktisi berlisensi resmi</strong> yang memiliki kewenangan untuk:
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-bold">
+                  1
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Menyebarkan Konsep STIFIn</h4>
+                  <p class="text-gray-600">Mengedukasi masyarakat tentang pentingnya mengenali potensi genetik</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-bold">
+                  2
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Melayani Tes Sidik Jari</h4>
+                  <p class="text-gray-600">Melakukan scanning sidik jari dan menganalisis hasilnya</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-bold">
+                  3
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Konsultasi Mendalam</h4>
+                  <p class="text-gray-600">Memberikan interpretasi hasil dan rekomendasi pengembangan diri</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 md:p-10">
+            <div class="bg-white rounded-xl p-6 shadow-lg mb-6">
+              <div class="flex items-center space-x-4 mb-4">
+                <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold text-gray-900">Lisensi Resmi</p>
+                  <p class="text-sm text-gray-600">Sertifikat dari STIFIn Indonesia</p>
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm">
+                Setiap promotor akan mendapatkan sertifikasi resmi dan pelatihan komprehensif dari para ahli STIFIn.
+              </p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+              <h4 class="font-bold text-gray-900 mb-3">Teknologi STIFIn</h4>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                STIFIn (Sensing, Thinking, Intuiting, Feeling, dan Insting) adalah metode ilmiah berbasis
+                <strong>analisis sidik jari</strong> untuk mengidentifikasi kecerdasan dominan,
+                kepribadian genetik, dan potensi bawaan seseorang sejak lahir.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Grid -->
+  <section class="py-16 md:py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+            Keuntungan Menjadi Promotor STIFIn
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Paket lengkap yang akan mendukung kesuksesan Anda sebagai praktisi STIFIn profesional
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <!-- Financial Benefits -->
+          <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary-600">
+            <div class="w-14 h-14 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Penghasilan Unlimited</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start space-x-2">
+                <span class="text-primary-600 mt-1">✓</span>
+                <span>Potensi pendapatan <strong>10+ juta per bulan</strong></span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-primary-600 mt-1">✓</span>
+                <span>Margin setiap tes yang dilakukan hingga 70%</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-primary-600 mt-1">✓</span>
+                <span>Margin dari hasil merefrensikan seseorang untuk jadi promotor</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-primary-600 mt-1">✓</span>
+                <span>Investasi sekali, profit berkali-kali</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Flexibility -->
+          <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-secondary-600">
+            <div class="w-14 h-14 bg-secondary-100 text-secondary-600 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Fleksibilitas Maksimal</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start space-x-2">
+                <span class="text-secondary-600 mt-1">✓</span>
+                <span>Kerja dari mana saja (home/office/cafe)</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-secondary-600 mt-1">✓</span>
+                <span>Atur waktu sendiri sesuai kebutuhan</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-secondary-600 mt-1">✓</span>
+                <span>Bisa part-time atau full-time</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-secondary-600 mt-1">✓</span>
+                <span>Buka ruang konsultasi pribadi</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-primary-600">
+            <div class="w-14 h-14 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Dukungan Penuh</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start space-x-2">
+                <span class="text-primary-600 mt-1">✓</span>
+                <span>Kelas pendampingan eksklusif</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-primary-600 mt-1">✓</span>
+                <span>Bimbingan langsung dari Expert STIFIn</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-primary-600 mt-1">✓</span>
+                <span>Update skill & strategi marketing</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-primary-600 mt-1">✓</span>
+                <span>Komunitas promotor se-Indonesia</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Additional Benefits -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 rounded-2xl p-8 text-white">
+            <h3 class="font-bold text-2xl mb-6 flex items-center space-x-2">
+              <span>✈️</span>
+              <span>Reward & Bonus Menarik</span>
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-white rounded-full"></div>
+                <span>Trip ke dalam & luar negeri untuk top performer</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-white rounded-full"></div>
+                <span>Bonus pencapaian target bulanan</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-white rounded-full"></div>
+                <span>Apresiasi untuk kontributor terbaik</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-md border-2 border-primary-200">
+            <h3 class="font-bold text-2xl mb-6 flex items-center space-x-2 text-gray-900">
+              <span>🚀</span>
+              <span>Marketing Support</span>
+            </h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-primary-600 rounded-full"></div>
+                <span>Landing page pribadi untuk promosi</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-primary-600 rounded-full"></div>
+                <span>Konten marketing siap pakai</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-primary-600 rounded-full"></div>
+                <span>Profil tampil di website resmi STIFIn Genetic</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="py-16 md:py-20 bg-gradient-to-r from-secondary-50 to-primary-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+            Lebih dari Sekadar Bisnis
+          </h2>
+          <p class="text-xl text-gray-700">
+            Jadilah bagian dari gerakan sosial yang berdampak positif
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-green-500 via-teal-500 to-cyan-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold">
+              💡
+            </div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Memberdayakan Individu</h3>
+            <p class="text-gray-700">
+              Membantu orang menemukan potensi genetik mereka dan mengarahkan kehidupan sesuai kelebihan bawaan
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-green-500 via-teal-500 to-cyan-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold">
+              🎓
+            </div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Mencerdaskan Bangsa</h3>
+            <p class="text-gray-700">
+              Berkontribusi pada pendidikan Indonesia dengan membantu pemilihan jurusan dan karir yang tepat
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-green-500 via-teal-500 to-cyan-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold">
+              🤝
+            </div>
+            <h3 class="font-bold text-xl text-gray-900 mb-3">Penghasilan Bermakna</h3>
+            <p class="text-gray-700">
+              Dapatkan income yang baik sambil memberikan manfaat nyata bagi kehidupan orang lain
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10 text-center">
+          <div class="inline-block bg-primary-100 text-primary-700 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+            Terbuka untuk Semua
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Siapa Pun Bisa Bergabung!
+          </h3>
+          <p class="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
+            Tidak ada batasan usia atau latar belakang pendidikan. Baik Anda seorang profesional,
+            ibu rumah tangga, mahasiswa, atau pensiunan - semua bisa menjadi Promotor STIFIn yang sukses.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 text-sm">
+            <span class="bg-primary-50 text-primary-700 px-4 py-2 rounded-full font-semibold">✓ Profesional</span>
+            <span class="bg-primary-50 text-primary-700 px-4 py-2 rounded-full font-semibold">✓ Ibu Rumah Tangga</span>
+            <span class="bg-primary-50 text-primary-700 px-4 py-2 rounded-full font-semibold">✓ Mahasiswa</span>
+            <span class="bg-primary-50 text-primary-700 px-4 py-2 rounded-full font-semibold">✓ Pensiunan</span>
+            <span class="bg-primary-50 text-primary-700 px-4 py-2 rounded-full font-semibold">✓ Pengusaha</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps Section -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-block bg-primary-100 text-primary-700 px-6 py-2 rounded-full text-sm font-semibold mb-4">
+            Proses Pendaftaran
+          </div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+            4 Langkah Menjadi Licensed Promotor STIFIn
+          </h2>
+          <p class="text-lg text-gray-600">
+            Proses yang simple dan terstruktur untuk memulai karir Anda
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-2xl flex items-center justify-center font-bold text-2xl md:text-3xl shadow-lg">
+                1
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Hubungi Kami via WhatsApp</h3>
+              <p class="text-gray-700 mb-4 text-lg">
+                Klik tombol "Hubungi via WhatsApp" untuk memulai percakapan dengan tim kami dan sampaikan ketertarikan Anda menjadi promotor STIFIn.
+              </p>
+              <div class="bg-white rounded-lg p-4 shadow-sm">
+                <h4 class="font-semibold text-gray-900 mb-2">Yang akan Anda dapatkan:</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-primary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Response cepat dalam hitungan menit</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-primary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Konsultasi gratis peluang Licensed Promotor STIFIn</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-primary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Info detail investasi dan jadwal workshop terdekat</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-secondary-50 to-secondary-100 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-2xl flex items-center justify-center font-bold text-2xl md:text-3xl shadow-lg">
+                2
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Workshop STIFIn Level 1 (WSL1)</h3>
+              <p class="text-gray-700 mb-4 text-lg">
+                Ikuti Workshop STIFIn Level 1 selama 1 hari untuk memahami konsep dasar STIFIn, 9 personality genetik, dan sirkulasi mesin kecerdasan.
+              </p>
+              <div class="bg-white rounded-lg p-4 shadow-sm">
+                <h4 class="font-semibold text-gray-900 mb-2">Materi Workshop Level 1:</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-secondary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Mesin kecerdasan & personality genetik</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-secondary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Sirkulasi STIFIn & Golden Rule STIFIn</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-secondary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Ujian WSL1 & sertifikat elektronik</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-2xl flex items-center justify-center font-bold text-2xl md:text-3xl shadow-lg">
+                3
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Workshop STIFIn Level 2 (WSL2)</h3>
+              <p class="text-gray-700 mb-4 text-lg">
+                Lanjutkan ke Workshop STIFIn Level 2 selama 2-3 hari untuk memperdalam materi, praktik analisis hasil tes, dan lulus ujian kompetensi.
+              </p>
+              <div class="bg-white rounded-lg p-4 shadow-sm">
+                <h4 class="font-semibold text-gray-900 mb-2">Materi Workshop Level 2:</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-primary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Konsep STIFIn level advance</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-primary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Praktik langsung analisis hasil tes</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-primary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Ujian kompetensi Licensed Promotor</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 bg-gradient-to-r from-secondary-50 to-secondary-100 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600 text-white rounded-2xl flex items-center justify-center font-bold text-2xl md:text-3xl shadow-lg">
+                4
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Dapatkan ID Aplikasi & Instalasi</h3>
+              <p class="text-gray-700 mb-4 text-lg">
+                Setelah lulus WSL2, dapatkan ID aplikasi tes STIFIn pribadi seumur hidup dan instalasi aplikasi dengan training penggunaan untuk melayani klien.
+              </p>
+              <div class="bg-white rounded-lg p-4 shadow-sm">
+                <h4 class="font-semibold text-gray-900 mb-2">Yang Anda dapatkan:</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-secondary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>ID aplikasi pribadi seumur hidup (tanpa renewal fee)</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-secondary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Scanner USB fingerprint + instalasi dibantu tim</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-secondary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Training penggunaan aplikasi untuk tes klien</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 rounded-2xl p-8 text-white text-center">
+          <h3 class="text-2xl font-bold mb-3">Selamat! Anda sudah siap melayani klien</h3>
+          <p class="text-lg text-white/90">
+            Setelah Step 4, Anda resmi menjadi Licensed Promotor STIFIn dan bisa langsung mulai melayani klien untuk tes STIFIn.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta-bottom" class="py-16 md:py-20 bg-gradient-to-br from-green-600 via-teal-600 to-cyan-600">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-8">
+          <div class="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
+            Langkah Pertama Menuju Kesuksesan
+          </div>
+          <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
+            Siap Memulai Perjalanan Anda?
+          </h2>
+          <p class="text-xl text-white/90 mb-8 leading-relaxed">
+            Hubungi kami sekarang untuk informasi lengkap pendaftaran Promotor STIFIn
+            Se-Indonesia dan mulai wujudkan impian finansial Anda!
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+          <div class="mb-6">
+            <p class="text-gray-700 text-lg mb-2">Konsultasi & Pendaftaran</p>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+              Hubungi Tim Kami
+            </h3>
+          </div>
+
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center space-x-3 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105 mb-6"
+          >
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>Chat via WhatsApp</span>
+          </a>
+
+          <div class="flex items-center justify-center space-x-2 text-gray-600">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span class="font-semibold">{SITE_CONFIG.whatsapp.displayNumber}</span>
+          </div>
+
+          <div class="mt-8 pt-8 border-t border-gray-200">
+            <p class="text-sm text-gray-600 mb-3">Respons cepat setiap hari</p>
+            <div class="flex flex-wrap justify-center gap-3 text-xs">
+              <div class="flex items-center space-x-2 text-gray-700">
+                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Konsultasi Gratis</span>
+              </div>
+              <div class="flex items-center space-x-2 text-gray-700">
+                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Tanpa Komitmen</span>
+              </div>
+              <div class="flex items-center space-x-2 text-gray-700">
+                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Info Lengkap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    </main>
+  </body>
+</html>
