@@ -7,6 +7,12 @@ import { generateGeneralWhatsAppURL } from '@/lib/whatsapp';
 import '@/styles/global.css';
 
 const waUrl = generateGeneralWhatsAppURL();
+const waFlashPromoUrl = generateGeneralWhatsAppURL(
+  'Halo, saya ingin ambil Flash Promo Rp 7.990.000 untuk Paket Promotor STIFIn. Mohon info langkah pendaftarannya.'
+);
+const waCicilanUrl = generateGeneralWhatsAppURL(
+  'Halo, saya ingin daftar Program Cicilan Promotor STIFIn (DP 50% + cicilan 5x). Mohon info persyaratannya.'
+);
 const pageTitle = 'Peluang Promotor STIFIn';
 const description = SITE_CONFIG.description;
 const currentMonthName = new Intl.DateTimeFormat('id-ID', {
@@ -608,22 +614,58 @@ const monthName = currentMonthName.charAt(0).toUpperCase() + currentMonthName.sl
               <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">&#10003;</span><span>Join SuksesMulia Community</span></li>
             </ul>
             </div>
+            <div class="mt-6">
+              <a
+                href={waFlashPromoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 text-white px-6 py-3 rounded-full font-bold hover:shadow-lg transition-all"
+              >
+                Ambil Flash Promo Sekarang
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="mt-6 bg-white border-2 border-emerald-200 rounded-2xl p-6 md:p-7 shadow-lg">
-          <div class="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-3 py-1 text-xs font-bold uppercase tracking-wide mb-3">
-            Alternatif Pembayaran
-          </div>
-          <h4 class="text-xl font-bold text-gray-900 mb-3">Program Cicilan (Opsional)</h4>
-          <div class="space-y-2 text-gray-700">
-            <p>
-              Normal :
-              <span class="line-through decoration-2 decoration-red-500 text-gray-500 font-semibold">Rp 12.500.000</span>
-            </p>
-            <p class="text-lg font-bold text-emerald-700">Promo Cicilan : Rp 10.000.000</p>
-            <p>DP (50%) : <span class="font-semibold text-gray-900">Rp 5.000.000</span></p>
-            <p>Cicilan (5x) : <span class="font-semibold text-gray-900">Rp 1.000.000/bulan</span></p>
+        <div id="program-cicilan" class="mt-6 bg-white border-2 border-emerald-200 rounded-2xl p-6 md:p-7 shadow-lg">
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div class="lg:flex-1">
+              <div class="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-3 py-1 text-xs font-bold uppercase tracking-wide mb-3">
+                Alternatif Pembayaran
+              </div>
+              <h4 class="text-xl font-bold text-gray-900 mb-3">Program Cicilan (Opsional)</h4>
+              <div class="space-y-2 text-gray-700">
+                <p>
+                  Normal :
+                  <span class="line-through decoration-2 decoration-red-500 text-gray-500 font-semibold">Rp 12.500.000</span>
+                </p>
+                <p class="text-lg font-bold text-emerald-700">Promo Cicilan : Rp 10.000.000</p>
+                <p>DP (50%) : <span class="font-semibold text-gray-900">Rp 5.000.000</span></p>
+                <p>Cicilan (5x) : <span class="font-semibold text-gray-900">Rp 1.000.000/bulan</span></p>
+              </div>
+              <div class="mt-5">
+                <a
+                  href={waCicilanUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center bg-emerald-600 text-white px-6 py-3 rounded-full font-bold hover:bg-emerald-700 transition-all"
+                >
+                  Pilih Program Cicilan
+                </a>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-64 xl:w-72">
+              <img
+                src="/banner-cicilan.png"
+                alt="Banner Program Cicilan Promotor STIFIn"
+                width="720"
+                height="720"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-auto rounded-xl border border-emerald-100 shadow-sm object-cover"
+              />
+            </div>
           </div>
         </div>
 
