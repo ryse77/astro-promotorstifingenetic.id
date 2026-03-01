@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.2",
+    "astro": "^5.18.0",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
