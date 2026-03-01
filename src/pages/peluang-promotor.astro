@@ -27,7 +27,7 @@ const monthName = currentMonthName.charAt(0).toUpperCase() + currentMonthName.sl
   <head>
     <SEOHead title={pageTitle} description={description} schemaType="Organization" />
     <SchemaOrg type="Organization" />
-    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-008R0THXPL"></script>
     <script>
       {`
@@ -35,6 +35,7 @@ const monthName = currentMonthName.charAt(0).toUpperCase() + currentMonthName.sl
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-008R0THXPL');
+        gtag('config', 'AW-17932220972');
       `}
     </script>
   </head>
