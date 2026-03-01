@@ -9,6 +9,11 @@ import '@/styles/global.css';
 const waUrl = generateGeneralWhatsAppURL();
 const pageTitle = 'Peluang Promotor STIFIn';
 const description = SITE_CONFIG.description;
+const currentMonthName = new Intl.DateTimeFormat('id-ID', {
+  month: 'long',
+  timeZone: 'Asia/Jakarta'
+}).format(new Date());
+const monthName = currentMonthName.charAt(0).toUpperCase() + currentMonthName.slice(1);
 ---
 
 <!DOCTYPE html>
@@ -443,6 +448,14 @@ const description = SITE_CONFIG.description;
               <p class="text-gray-700 mb-4 text-lg">
                 Ikuti Workshop STIFIn Level 1 selama 1 hari untuk memahami konsep dasar STIFIn, 9 personality genetik, dan sirkulasi mesin kecerdasan.
               </p>
+              <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-4">
+                <p class="text-gray-800 font-semibold mb-1">Harga WSL1:</p>
+                <p class="text-gray-700 text-sm">
+                  Normal:
+                  <span class="line-through text-gray-500">Rp 1.500.000</span>
+                </p>
+                <p class="text-gray-900 font-bold">Promo: Rp 990.000</p>
+              </div>
               <div class="bg-white rounded-lg p-4 shadow-sm">
                 <h4 class="font-semibold text-gray-900 mb-2">Materi Workshop Level 1:</h4>
                 <ul class="space-y-2 text-gray-700">
@@ -480,6 +493,14 @@ const description = SITE_CONFIG.description;
               <p class="text-gray-700 mb-4 text-lg">
                 Lanjutkan ke Workshop STIFIn Level 2 selama 2-3 hari untuk memperdalam materi, praktik analisis hasil tes, dan lulus ujian kompetensi.
               </p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-4">
+                <p class="text-gray-800 font-semibold mb-1">Harga WSL2:</p>
+                <p class="text-gray-700 text-sm">
+                  Normal:
+                  <span class="line-through text-gray-500">Rp 6.000.000</span>
+                </p>
+                <p class="text-gray-900 font-bold">Promo: Rp 4.990.000</p>
+              </div>
               <div class="bg-white rounded-lg p-4 shadow-sm">
                 <h4 class="font-semibold text-gray-900 mb-2">Materi Workshop Level 2:</h4>
                 <ul class="space-y-2 text-gray-700">
@@ -517,6 +538,14 @@ const description = SITE_CONFIG.description;
               <p class="text-gray-700 mb-4 text-lg">
                 Setelah lulus WSL2, dapatkan ID aplikasi tes STIFIn pribadi seumur hidup dan instalasi aplikasi dengan training penggunaan untuk melayani klien.
               </p>
+              <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-4">
+                <p class="text-gray-800 font-semibold mb-1">Harga ID & Scanner:</p>
+                <p class="text-gray-700 text-sm">
+                  Normal:
+                  <span class="line-through text-gray-500">Rp 5.000.000</span>
+                </p>
+                <p class="text-gray-900 font-bold">Promo: Rp 3.990.000</p>
+              </div>
               <div class="bg-white rounded-lg p-4 shadow-sm">
                 <h4 class="font-semibold text-gray-900 mb-2">Yang Anda dapatkan:</h4>
                 <ul class="space-y-2 text-gray-700">
@@ -544,7 +573,45 @@ const description = SITE_CONFIG.description;
           </div>
         </div>
 
-        <div class="mt-12 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 rounded-2xl p-8 text-white text-center">
+        <div class="mt-12 relative rounded-3xl bg-gradient-to-r from-amber-200 via-emerald-200 to-cyan-200 p-[2px] shadow-2xl">
+          <div class="rounded-[22px] bg-white p-8 md:p-10">
+            <div class="inline-flex items-center rounded-full bg-red-600 px-4 py-1 text-xs md:text-sm font-bold uppercase tracking-wide text-white mb-4">
+              Penawaran Spesial
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Investasi Paket Promotor STIFIn khusus bulan {monthName} saja :
+            </h3>
+            <div class="space-y-2 mb-6">
+              <p class="text-lg text-gray-700">
+                Normal :
+                <span class="line-through decoration-2 decoration-red-500 text-gray-500 font-semibold">Rp 12.500.000</span>
+              </p>
+              <p class="text-2xl text-green-700 font-extrabold">
+                Flash Promo : Rp 7.990.000
+              </p>
+              <p class="text-sm font-semibold text-red-600">Hemat Rp 4.510.000</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+            <h4 class="font-bold text-gray-900 mb-3">BENEFIT INCLUDE :</h4>
+            <ul class="grid md:grid-cols-2 gap-x-6 gap-y-2 text-gray-700">
+              <li>WSL 1 : 1 Hari</li>
+              <li>WSL 2 : 2 Hari</li>
+              <li>E-Module</li>
+              <li>E-Certificate</li>
+              <li>ID Promotor</li>
+              <li>Aplikasi Promotor</li>
+              <li>1 bh Scanner Fingerprint</li>
+              <li>1 bh Buku Pancarona (bonus)</li>
+              <li>Weekly Enrichment</li>
+              <li>Monthly Mentoring</li>
+              <li>Annualy Reward</li>
+              <li>Join SuksesMulia Community</li>
+            </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 rounded-2xl p-8 text-white text-center">
           <h3 class="text-2xl font-bold mb-3">Selamat! Anda sudah siap melayani klien</h3>
           <p class="text-lg text-white/90">
             Setelah Step 4, Anda resmi menjadi Licensed Promotor STIFIn dan bisa langsung mulai melayani klien untuk tes STIFIn.
