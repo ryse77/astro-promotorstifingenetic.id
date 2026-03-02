@@ -6,16 +6,75 @@ import { generateGeneralWhatsAppURL } from '@/lib/whatsapp';
 const waUrl = generateGeneralWhatsAppURL(
   'Halo, saya ingin info lengkap program Licensed Promotor STIFIn. Mohon arahan tahap pendaftarannya.'
 );
+const rawMonth = new Intl.DateTimeFormat('id-ID', { month: 'long' }).format(new Date());
+const currentMonth = rawMonth.charAt(0).toUpperCase() + rawMonth.slice(1);
+const testimonialVideos = [
+  {
+    title: 'Testimoni Promotor 1',
+    embedUrl: 'https://www.youtube.com/embed/eFHKwNLRNOU'
+  },
+  {
+    title: 'Testimoni Promotor 2',
+    embedUrl: 'https://www.youtube.com/embed/pTOIrl71Bzc'
+  },
+  {
+    title: 'Testimoni Promotor 3',
+    embedUrl: 'https://www.youtube.com/embed/q-1L5kqPlQE'
+  }
+];
+const promotorGallery = [
+  { src: '/promotor/anita-fatmawati.png', name: 'Anita Fatmawati' },
+  { src: '/promotor/ardi-wardianto.png', name: 'Ardi Wardianto' },
+  { src: '/promotor/christina-fitri-astuti.png', name: 'Christina Fitri Astuti' },
+  { src: '/promotor/dian-andin.png', name: 'Dian Andin' },
+  { src: '/promotor/heriansyah-putra.png', name: 'Heriansyah Putra' },
+  { src: '/promotor/idayani-sijabat.png', name: 'Idayani Sijabat' },
+  { src: '/promotor/ihya-ulumuddin.png', name: 'Ihya Ulumuddin' },
+  { src: '/promotor/joko-santoso.png', name: 'Joko Santoso' },
+  { src: '/promotor/m-faiz-habibi.png', name: 'M Faiz Habibi' },
+  { src: '/promotor/m-syam-alfayyed.png', name: 'M Syam Alfayyed' },
+  { src: '/promotor/purwati-sugito.png', name: 'Purwati Sugito' },
+  { src: '/promotor/putra-andica-siagian.png', name: 'Putra Andica Siagian' },
+  { src: '/promotor/siti-fatimah.png', name: 'Siti Fatimah' },
+  { src: '/promotor/yenni-ramadhani-putri.png', name: 'Yenni Ramadhani Putri' }
+];
+const topCabang2026 = [
+  { rank: 1, name: 'Cabang Khusus Kota Sleman', total: 1471, highlight: true },
+  { rank: 2, name: 'Cabang Khusus Binjai', total: 820 },
+  { rank: 3, name: 'Cabang Khusus Tangerang Selatan', total: 640 },
+  { rank: 4, name: 'Cabang Khusus Jakarta Timur', total: 425 },
+  { rank: 5, name: 'Cabang Khusus Kab Lebak', total: 392 },
+  { rank: 6, name: 'Cabang Khusus Batam', total: 323 },
+  { rank: 7, name: 'Cabang Khusus Kota Batu', total: 266 },
+  { rank: 8, name: 'Cabang Khusus Kota Tangerang', total: 262 },
+  { rank: 9, name: 'Cabang Khusus Kota Metro', total: 242 },
+  { rank: 10, name: 'Cabang Khusus Jakarta Selatan', total: 239 }
+];
+const topPromotor2026 = [
+  { rank: 1, name: 'Idayani Sijabat SH', total: 343, highlight: true },
+  { rank: 2, name: 'Putra Andica Siagian', total: 238, highlight: true },
+  { rank: 3, name: 'Solver Reza', total: 206 },
+  { rank: 4, name: 'Ardi Wardianto', total: 203, highlight: true },
+  { rank: 5, name: 'Purwati Sugito', total: 182, highlight: true },
+  { rank: 6, name: 'RINA SETIAWATI', total: 158 },
+  { rank: 7, name: 'Ihya Ulumuddin', total: 146, highlight: true },
+  { rank: 8, name: 'Yenni Ramadhani Putri', total: 134, highlight: true },
+  { rank: 9, name: 'Endang Juaitah', total: 111 },
+  { rank: 10, name: 'Joko Santoso', total: 108, highlight: true }
+];
 ---
 
 <BaseLayout
   title="Promotor STIFIn - Program Licensed Promotor"
-  description="Halaman resmi program Licensed Promotor STIFIn dengan pendekatan PAS: problem, agitate, solution."
+  description="Program Licensed Promotor STIFIn: peluang profesi fleksibel, berdampak, dan didampingi dari awal sampai siap melayani klien."
   schemaType="Organization"
 >
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-    <div class="absolute inset-0 bg-black opacity-10">
+  <!-- Hook -->
+  <section
+    class="relative overflow-hidden text-white"
+    style="background: linear-gradient(135deg, #0d5f4e 0%, #05291f 100%);"
+  >
+    <div class="absolute inset-0 bg-black/10">
       <div
         class="absolute inset-0"
         style="background-image: url('data:image/svg+xml,%3Csvg width=%2760%27 height=%2760%27 viewBox=%270 0 60 60%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27none%27 fill-rule=%27evenodd%27%3E%3Cg fill=%27%23ffffff%27 fill-opacity=%270.05%27%3E%3Cpath d=%27M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%27/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
@@ -25,21 +84,38 @@ const waUrl = generateGeneralWhatsAppURL(
     <div class="container mx-auto px-4 py-20 md:py-24 relative z-10">
       <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <div class="inline-block mb-6 px-4 py-2 bg-white bg-opacity-20 rounded-full text-sm font-semibold backdrop-blur-sm">
+          <div class="inline-flex items-center mb-5 px-4 py-2.5 rounded-xl border border-white/35 bg-white/10 text-sm font-semibold shadow-sm backdrop-blur-sm">
             Peluang Karier dan Dampak Sosial
           </div>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-            Jadi Licensed Promotor STIFIn: Penghasilan Naik, Waktu Tetap Fleksibel
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-5 leading-tight">
+            Pendaftaran Licensed Promotor STIFIn: Penghasilan Naik, Waktu Tetap Fleksibel
           </h1>
-          <p class="text-xl md:text-2xl text-primary-100 mb-8 leading-relaxed">
-            Bangun penghasilan fleksibel sambil membantu lebih banyak orang mengenali potensi dirinya melalui metode STIFIn.
+          <p class="text-lg md:text-2xl text-primary-100 mb-8 leading-relaxed max-w-2xl">
+            Untuk profesional, pengusaha, pendidik, dan siapa pun yang ingin punya profesi berdampak sambil membangun income yang lebih terarah.
           </p>
-          <a
-            href="#cta-promotor-stifin"
-            class="inline-block bg-white text-primary-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-primary-50 transition-all transform hover:scale-105 shadow-xl"
-          >
-            Konsultasi via WhatsApp
-          </a>
+          <div class="flex flex-col sm:flex-row gap-3 mb-6">
+            <a
+              href="#offer-program"
+              style="background-color:#facc15; color:#111827; border-color:#facc15;"
+              class="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 rounded-full border-2 font-bold text-lg leading-none transition-all shadow-lg"
+            >
+              Lihat Penawaran
+            </a>
+            <a
+              href="#cta-promotor-stifin"
+              class="inline-flex w-full sm:w-auto items-center justify-center bg-white text-primary-700 px-8 py-4 rounded-full border-2 border-white font-bold text-lg leading-none hover:bg-primary-50 transition-all shadow-lg"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Konsultasi
+            </a>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-3 text-sm">
+            <p class="bg-white/10 border border-white/20 rounded-lg px-3 py-2 flex items-center gap-2"><span>&#9989;</span><span>Potensi penghasilan lebih dari 3x UMR DKI Jakarta</span></p>
+            <p class="bg-white/10 border border-white/20 rounded-lg px-3 py-2 flex items-center gap-2"><span>&#9989;</span><span>Sistem dan mentoring berjalan nasional</span></p>
+            <p class="bg-white/10 border border-white/20 rounded-lg px-3 py-2 flex items-center gap-2"><span>&#9989;</span><span>Cocok untuk yang ingin fleksibilitas kerja</span></p>
+          </div>
         </div>
 
         <div class="relative">
@@ -60,18 +136,15 @@ const waUrl = generateGeneralWhatsAppURL(
     </div>
   </section>
 
-  <!-- Announcement Banner -->
   <section class="py-4 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600">
     <div class="container mx-auto px-4">
-      <div class="flex items-center justify-center text-white">
-        <p class="text-sm md:text-base font-semibold">
-          PENDAFTARAN LICENSED PROMOTOR STIFIn DIBUKA
-        </p>
-      </div>
+      <p class="text-sm md:text-base font-semibold text-white text-center">
+        PENDAFTARAN LICENSED PROMOTOR STIFIn DIBUKA
+      </p>
     </div>
   </section>
 
-  <!-- PAS: Problem -->
+  <!-- Problem -->
   <section class="py-16 md:py-20 bg-gradient-to-b from-white to-primary-50">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
@@ -80,35 +153,35 @@ const waUrl = generateGeneralWhatsAppURL(
             PAS - Problem
           </span>
           <h2 class="text-3xl md:text-5xl font-heading font-bold text-gray-900 mt-4 mb-4">
-            Banyak Orang Ingin Naik Level Income dan Karier, Tapi Terjebak 3 Kendala Ini
+            Banyak Orang Ingin Naik Level Income, Tapi Masih Terkunci di Pola Lama
           </h2>
           <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-            Banyak orang ingin punya profesi yang lebih fleksibel dan berdampak, namun belum menemukan kendaraan yang tepat untuk mencapainya.
+            Ingin profesi lebih fleksibel dan bernilai, tapi belum menemukan model kerja yang jelas, terbukti, dan bisa langsung dijalankan.
           </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-white rounded-xl shadow-md p-6">
             <div class="w-12 h-12 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-bold text-lg mb-4">1</div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Penghasilan Mentok dan Sulit Naik Signifikan</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Penghasilan Mentok</h3>
             <p class="text-gray-600">
-              Banyak pekerjaan hanya memberi kenaikan income yang lambat, sehingga target finansial besar terasa lama dicapai.
+              Kenaikan income lambat dan sering tidak sebanding dengan energi yang dikeluarkan.
             </p>
           </div>
 
           <div class="bg-white rounded-xl shadow-md p-6">
             <div class="w-12 h-12 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-bold text-lg mb-4">2</div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Waktu Kerja Kaku dan Sulit Fleksibel</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Waktu Tidak Fleksibel</h3>
             <p class="text-gray-600">
-              Terikat jam dan lokasi kerja membuat banyak orang kesulitan membangun karier yang tetap produktif tanpa mengorbankan kehidupan pribadi.
+              Rutinitas kerja kaku membuat sulit menata prioritas antara pekerjaan, keluarga, dan pengembangan diri.
             </p>
           </div>
 
           <div class="bg-white rounded-xl shadow-md p-6">
             <div class="w-12 h-12 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-bold text-lg mb-4">3</div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Ingin Mulai Bisnis Jasa, Tapi Belum Punya Sistem</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Belum Punya Sistem</h3>
             <p class="text-gray-600">
-              Banyak orang belum punya metode asesmen yang mudah, mentor, tools marketing, dan model bisnis yang jelas untuk mulai melayani klien dengan percaya diri.
+              Ingin mulai layanan konsultatif, tetapi belum punya metode, lisensi, dan pendampingan yang terstruktur.
             </p>
           </div>
         </div>
@@ -116,49 +189,49 @@ const waUrl = generateGeneralWhatsAppURL(
     </div>
   </section>
 
-  <!-- PAS: Agitate -->
+  <!-- Agitate -->
   <section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <div class="inline-flex items-center space-x-2 bg-secondary-50 text-secondary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              <span>PAS - Agitate</span>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
-              Jika Dibiarkan, Masalah Ini Akan Memperlambat Pertumbuhan Anda
-            </h2>
-            <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-              Bukan hanya soal kehilangan penghasilan, tetapi juga kehilangan momentum untuk membangun keahlian, jaringan, dan dampak sosial yang lebih luas.
-            </p>
-            <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6">
-              <p class="text-gray-800 font-semibold mb-2">Dampak yang paling sering terjadi:</p>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                waktu habis untuk aktivitas dengan nilai rendah, peluang klien terlewat, dan proses menjadi praktisi profesional tertunda terlalu lama.
-              </p>
-            </div>
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <div class="inline-flex items-center bg-secondary-50 text-secondary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            PAS - Agitate
           </div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-5">
+            Jika Ditunda Terus, Yang Hilang Bukan Hanya Penghasilan
+          </h2>
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            Anda juga kehilangan momentum membangun positioning profesional, jaringan klien, dan karier bermakna yang bisa bertumbuh jangka panjang.
+          </p>
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6">
+            <p class="text-gray-800 font-semibold mb-3">Dampak yang sering terjadi:</p>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start space-x-2"><span class="text-red-600 mt-1">x</span><span>Potensi besar tidak terpakai maksimal</span></li>
+              <li class="flex items-start space-x-2"><span class="text-red-600 mt-1">x</span><span>Peluang klien terlewat karena belum siap melayani</span></li>
+              <li class="flex items-start space-x-2"><span class="text-red-600 mt-1">x</span><span>Waktu habis untuk aktivitas tanpa leverage</span></li>
+            </ul>
+          </div>
+        </div>
 
-          <div class="space-y-4">
-            <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
-              <h3 class="text-lg font-bold text-gray-900 mb-1">Bukan Hanya Soal Uang</h3>
-              <p class="text-gray-600 text-sm">Tanpa sistem, waktu dan energi terpakai untuk hal yang tidak menghasilkan leverage.</p>
-            </div>
-            <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
-              <h3 class="text-lg font-bold text-gray-900 mb-1">Peluang Klien Terlewat</h3>
-              <p class="text-gray-600 text-sm">Banyak orang butuh pemetaan potensi, namun belum bertemu praktisi yang siap melayani.</p>
-            </div>
-            <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
-              <h3 class="text-lg font-bold text-gray-900 mb-1">Karier Sulit Naik Kelas</h3>
-              <p class="text-gray-600 text-sm">Tanpa lisensi dan pendampingan, layanan sulit dipercaya dan sulit bertumbuh konsisten.</p>
-            </div>
+        <div class="space-y-4">
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-1">Karier Sulit Naik Kelas</h3>
+            <p class="text-gray-600 text-sm">Tanpa lisensi dan metode jelas, membangun kredibilitas jadi lebih berat.</p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-1">Impact Sosial Tertunda</h3>
+            <p class="text-gray-600 text-sm">Banyak orang membutuhkan pemetaan potensi, tetapi belum mendapat edukasi yang benar.</p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <h3 class="text-lg font-bold text-gray-900 mb-1">Burnout Lebih Mudah Terjadi</h3>
+            <p class="text-gray-600 text-sm">Saat kerja tidak selaras dengan potensi, energi cepat habis dan hasil terasa stagnan.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PAS: Solution -->
+  <!-- Solution -->
   <section class="py-16 md:py-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
@@ -170,7 +243,7 @@ const waUrl = generateGeneralWhatsAppURL(
             Licensed Promotor STIFIn: Solusi Praktis untuk Income dan Impact
           </h2>
           <p class="text-lg text-gray-600 max-w-4xl mx-auto">
-            Solusi ini bukan hanya untuk meningkatkan penghasilan, tetapi juga untuk membangun profesi yang lebih bermakna, terarah, dan berdampak.
+            Anda tidak memulai dari nol. Ada metode, lisensi, tools, dan pendampingan agar bisa bertumbuh lebih cepat dan lebih terarah.
           </p>
         </div>
 
@@ -178,11 +251,9 @@ const waUrl = generateGeneralWhatsAppURL(
           <div class="bg-white rounded-2xl p-7 shadow-md border border-gray-100">
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Apa Itu STIFIn?</h3>
             <p class="text-gray-700 mb-4">
-              STIFIn adalah ilmu pemetaan potensi genetik manusia berbasis metode biometric (sidik jari) dengan akurasi tinggi.
+              STIFIn adalah pemetaan mesin kecerdasan dominan berbasis biometrik sidik jari dengan akurasi tinggi untuk membantu seseorang hidup lebih selaras dengan potensi alami.
             </p>
-            <p class="text-gray-700 mb-4">
-              STIFIn memetakan mesin kecerdasan dominan ke dalam 5 tipe utama:
-            </p>
+            <p class="text-gray-700 mb-4">5 mesin kecerdasan utama:</p>
             <ul class="space-y-2 text-gray-700">
               <li class="flex items-start space-x-2"><span class="text-primary-600 font-bold">S</span><span>Sensing</span></li>
               <li class="flex items-start space-x-2"><span class="text-primary-600 font-bold">T</span><span>Thinking</span></li>
@@ -193,219 +264,468 @@ const waUrl = generateGeneralWhatsAppURL(
           </div>
 
           <div class="bg-white rounded-2xl p-7 shadow-md border border-gray-100">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Manfaat Praktis STIFIn</h3>
-            <ul class="space-y-3 text-gray-700">
-              <li class="flex items-start space-x-2"><span class="text-secondary-600 mt-1">&#10003;</span><span>Mengetahui cara berpikir alami.</span></li>
-              <li class="flex items-start space-x-2"><span class="text-secondary-600 mt-1">&#10003;</span><span>Memahami pola mengambil keputusan.</span></li>
-              <li class="flex items-start space-x-2"><span class="text-secondary-600 mt-1">&#10003;</span><span>Mengenali gaya belajar dan bekerja paling optimal.</span></li>
-              <li class="flex items-start space-x-2"><span class="text-secondary-600 mt-1">&#10003;</span><span>Menentukan profesi dan bisnis yang lebih ideal.</span></li>
-              <li class="flex items-start space-x-2"><span class="text-secondary-600 mt-1">&#10003;</span><span>Memperbaiki pola komunikasi, parenting, dan kepemimpinan.</span></li>
-            </ul>
-            <p class="text-gray-700 mt-4">
-              Ketika seseorang hidup sesuai mesin kecerdasannya, energi tidak habis untuk berjuang, tetapi mengalir untuk bertumbuh.
-            </p>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Mengapa Menjadi Licensed Promotor STIFIn?</h3>
+            <ol class="space-y-2 text-gray-700 list-decimal pl-5">
+              <li><span class="font-semibold text-gray-900">Potensi Penghasilan Tinggi:</span> peluang income lebih dari 3x UMR DKI Jakarta.</li>
+              <li><span class="font-semibold text-gray-900">Fleksibilitas Tinggi:</span> tidak terikat waktu dan tempat.</li>
+              <li><span class="font-semibold text-gray-900">Pendampingan dan Mentoring:</span> dibina sampai siap jalan.</li>
+              <li><span class="font-semibold text-gray-900">Support Marketing Kit:</span> materi promosi siap pakai.</li>
+              <li><span class="font-semibold text-gray-900">Bermanfaat Bagi Banyak Orang:</span> membantu orang menemukan jalurnya.</li>
+              <li><span class="font-semibold text-gray-900">Tes Simpel dan Akurat:</span> proses praktis dengan biometrik.</li>
+              <li><span class="font-semibold text-gray-900">Market Potensial:</span> minat terhadap STIFIn terus bertumbuh.</li>
+            </ol>
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl p-7 shadow-md border border-gray-100 mb-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Mengapa STIFIn Sangat Dibutuhkan Hari Ini?</h3>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <p class="font-semibold text-gray-900 mb-3">Masalah yang sering terjadi:</p>
-              <ul class="space-y-2 text-gray-700">
-                <li class="flex items-start space-x-2"><span class="text-red-600 font-bold">x</span><span>Salah jurusan</span></li>
-                <li class="flex items-start space-x-2"><span class="text-red-600 font-bold">x</span><span>Salah profesi</span></li>
-                <li class="flex items-start space-x-2"><span class="text-red-600 font-bold">x</span><span>Salah bisnis</span></li>
-                <li class="flex items-start space-x-2"><span class="text-red-600 font-bold">x</span><span>Salah mendidik anak</span></li>
-                <li class="flex items-start space-x-2"><span class="text-red-600 font-bold">x</span><span>Salah memimpin tim</span></li>
+        <div class="bg-white rounded-2xl p-7 shadow-md border border-gray-100">
+          <h3 class="text-2xl font-bold text-gray-900 mb-5">Tahapan Menjadi Licensed Promotor STIFIn</h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 border border-primary-100">
+              <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">1</div>
+              <h4 class="font-bold text-xl text-gray-900 mb-2">Workshop STIFIn Level 1 (WSL1)</h4>
+              <p class="text-gray-700 text-sm mb-3">Ikuti Workshop STIFIn Level 1 selama 1 hari untuk memahami konsep dasar STIFIn, 9 personality genetik, dan sirkulasi mesin kecerdasan.</p>
+              <div class="mb-3 rounded-xl border border-amber-200 bg-amber-50/80 py-3 pr-3 pl-5">
+                <p class="text-xs font-bold tracking-wide text-amber-700 mb-1">HARGA WSL1</p>
+                <p class="text-sm text-gray-700">Normal: <span class="line-through text-red-600">Rp 1.500.000</span></p>
+                <p class="text-xl font-extrabold text-emerald-700 leading-tight">Promo: Rp 990.000</p>
+                <p class="text-xs font-semibold text-red-600 mt-1">Hemat Rp 510.000</p>
+              </div>
+              <p class="text-sm font-semibold text-gray-900 mb-1">Materi Workshop Level 1:</p>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li class="flex items-start gap-2"><span class="text-orange-600 mt-0.5">&#10003;</span><span>Mesin kecerdasan &amp; personality genetik</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-600 mt-0.5">&#10003;</span><span>Sirkulasi STIFIn &amp; Golden Rule STIFIn</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-600 mt-0.5">&#10003;</span><span>Ujian WSL1 &amp; sertifikat elektronik</span></li>
               </ul>
             </div>
-            <div>
-              <p class="font-semibold text-gray-900 mb-3">Dampaknya:</p>
-              <ul class="space-y-2 text-gray-700">
-                <li>Stres</li>
-                <li>Burnout</li>
-                <li>Tidak bahagia meski terlihat sukses</li>
-                <li>Potensi besar tetapi tidak pernah maksimal</li>
+            <div class="bg-gradient-to-br from-secondary-50 to-white rounded-2xl p-6 border border-secondary-100">
+              <div class="w-12 h-12 bg-secondary-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">2</div>
+              <h4 class="font-bold text-xl text-gray-900 mb-2">Workshop STIFIn Level 2 (WSL2)</h4>
+              <p class="text-gray-700 text-sm mb-3">Lanjutkan ke Workshop STIFIn Level 2 selama 2-3 hari untuk memperdalam materi, praktik analisis hasil tes, dan lulus ujian kompetensi.</p>
+              <div class="mb-3 rounded-xl border border-emerald-200 bg-emerald-50/80 py-3 pr-3 pl-5">
+                <p class="text-xs font-bold tracking-wide text-emerald-700 mb-1">HARGA WSL2</p>
+                <p class="text-sm text-gray-700">Normal: <span class="line-through text-red-600">Rp 6.000.000</span></p>
+                <p class="text-xl font-extrabold text-emerald-700 leading-tight">Promo: Rp 4.990.000</p>
+                <p class="text-xs font-semibold text-red-600 mt-1">Hemat Rp 1.010.000</p>
+              </div>
+              <p class="text-sm font-semibold text-gray-900 mb-1">Materi Workshop Level 2:</p>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li class="flex items-start gap-2"><span class="text-emerald-700 mt-0.5">&#10003;</span><span>Konsep STIFIn level advance</span></li>
+                <li class="flex items-start gap-2"><span class="text-emerald-700 mt-0.5">&#10003;</span><span>Praktik langsung analisis hasil tes</span></li>
+                <li class="flex items-start gap-2"><span class="text-emerald-700 mt-0.5">&#10003;</span><span>Ujian kompetensi Licensed Promotor</span></li>
               </ul>
             </div>
-          </div>
-          <p class="text-gray-700 mt-5">
-            STIFIn hadir sebagai solusi ilmiah, praktis, dan aplikatif untuk individu, keluarga, sekolah, dan organisasi.
-          </p>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-8 mb-8">
-          <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-7 border border-primary-100">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Apa Itu STIFInpreneur SuksesMulia?</h3>
-            <ul class="space-y-2 text-gray-700 mb-4">
-              <li>Edukasi STIFIn</li>
-              <li>Pemberdayaan potensi manusia</li>
-              <li>Peluang karier dan bisnis berbasis makna</li>
-              <li>Misi kebermanfaatan dan keberkahan</li>
-            </ul>
-            <p class="text-gray-700">
-              Kami tidak hanya membangun penghasilan, tetapi juga nilai, dampak, dan legacy.
-            </p>
-          </div>
-
-          <div class="bg-gradient-to-br from-secondary-50 to-white rounded-2xl p-7 border border-secondary-100">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Peluang Karier Licensed Promotor STIFIn</h3>
-            <p class="text-gray-700 mb-4">
-              Licensed Promotor STIFIn adalah profesi resmi dan profesional sebagai mitra berlisensi.
-            </p>
-            <ul class="space-y-2 text-gray-700">
-              <li>Melayani tes STIFIn</li>
-              <li>Mengedukasi masyarakat</li>
-              <li>Membuka program di sekolah, komunitas, dan perusahaan</li>
-              <li>Mengembangkan bisnis STIFIn di wilayahnya</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl p-7 shadow-md border border-gray-100 mb-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Profesi Ini Cocok Untuk</h3>
-          <div class="grid md:grid-cols-2 gap-3 text-gray-700">
-            <p>&#10003; Profesional dan karyawan visioner</p>
-            <p>&#10003; Pengusaha dan entrepreneur</p>
-            <p>&#10003; Pendidik dan pemilik sekolah</p>
-            <p>&#10003; Trainer, coach, konsultan</p>
-            <p>&#10003; Ibu rumah tangga produktif</p>
-            <p>&#10003; Aktivis dakwah dan sosial</p>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-primary-600">
-            <h4 class="font-bold text-xl text-gray-900 mb-3">Profesi Bermakna dan Bernilai</h4>
-            <ul class="space-y-2 text-gray-700">
-              <li>Membantu orang menemukan jati diri dan masa depan</li>
-              <li>Potensi penghasilan berkelanjutan</li>
-              <li>Program reward dan tour</li>
-            </ul>
-          </div>
-          <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-secondary-600">
-            <h4 class="font-bold text-xl text-gray-900 mb-3">Upgrade Kapasitas Diri</h4>
-            <ul class="space-y-2 text-gray-700">
-              <li>Training STIFIn Level 01 dan 02</li>
-              <li>Skill presentasi dan konsultasi</li>
-              <li>Mentoring bisnis dan leadership</li>
-            </ul>
-          </div>
-          <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-primary-600">
-            <h4 class="font-bold text-xl text-gray-900 mb-3">Jaringan Nasional</h4>
-            <ul class="space-y-2 text-gray-700">
-              <li>Komunitas promotor solid</li>
-              <li>Kolaborasi lintas daerah</li>
-              <li>Kesempatan bertumbuh bersama</li>
-            </ul>
-          </div>
-          <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-secondary-600">
-            <h4 class="font-bold text-xl text-gray-900 mb-3">Selaras Nilai Hidup</h4>
-            <ul class="space-y-2 text-gray-700">
-              <li>Bisnis yang jujur</li>
-              <li>Ilmu yang mencerahkan</li>
-              <li>Dampak yang menenangkan hati</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl p-7 shadow-md border border-gray-100 mb-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Kenapa Harus Bergabung Bersama Kami?</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li>&#10003; Dibina langsung oleh Top Business Manager berpengalaman Bapak Heriansyah Putra MT Djalil</li>
-            <li>&#10003; Sistem sudah terbukti dan berjalan nasional</li>
-            <li>&#10003; Pendampingan, bukan dilepas sendiri</li>
-            <li>&#10003; Budaya kolaboratif dan berintegritas</li>
-            <li>&#10003; Misi besar: memanusiakan manusia sesuai fitrahnya</li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-2xl p-7 shadow-md border border-gray-100 mb-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-5">Profil Founder STIFInpreneur SuksesMulia</h3>
-          <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-            <img
-              src="/founder.jpeg?v=2"
-              alt="Heriansyah Putra MT Djalil"
-              width="800"
-              height="800"
-              loading="lazy"
-              decoding="async"
-              class="w-36 h-36 md:w-40 md:h-40 rounded-full object-cover object-top border-4 border-primary-100 shadow-md"
-            />
-            <div class="text-gray-700">
-              <h4 class="text-xl font-bold text-gray-900 mb-1">Heriansyah Putra MT Djalil | Self Awareness Motivator</h4>
-              <p class="mb-4">
-                Saya adalah Business Manager di STIFIn Genetic Indonesia, sekaligus STIFInpreneur yang mendedikasikan diri untuk membantu ribuan orang menemukan jalan hidup, profesi, dan bisnis yang sesuai dengan mesin kecerdasan genetiknya.
-              </p>
-              <p class="font-semibold text-gray-900 mb-2">Dengan pengalaman:</p>
-              <ul class="space-y-2 mb-4">
-                <li class="flex items-start space-x-2">
-                  <span class="text-green-600 mt-1">&#10003;</span>
-                  <span>Melayani ribuan klien Tes STIFIn bersama Tim Promotor seluruh Indonesia.</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <span class="text-green-600 mt-1">&#10003;</span>
-                  <span>Melahirkan Top Promotor STIFIn Nasional.</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <span class="text-green-600 mt-1">&#10003;</span>
-                  <span>Membangun dan membina jaringan Licensed Promotor STIFIn di berbagai daerah.</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <span class="text-green-600 mt-1">&#10003;</span>
-                  <span>Membina profesional, pendidik, pengusaha, dan leader komunitas.</span>
-                </li>
-              </ul>
-              <p class="font-semibold text-gray-900 mb-2">Saya meyakini satu hal:</p>
-              <ul class="space-y-1">
-                <li>- Kesuksesan bukan soal siapa yang paling pintar, tapi siapa yang paling tepat berada di jalurnya.</li>
-                <li>- STIFIn bukan sekadar alat tes.</li>
-                <li>- STIFIn adalah peta kehidupan.</li>
+            <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 border border-primary-100">
+              <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">3</div>
+              <h4 class="font-bold text-xl text-gray-900 mb-2">Dapatkan ID Aplikasi &amp; Instalasi</h4>
+              <p class="text-gray-700 text-sm mb-3">Setelah lulus WSL2, dapatkan ID aplikasi tes STIFIn pribadi seumur hidup dan instalasi aplikasi dengan training penggunaan untuk melayani klien.</p>
+              <div class="mb-3 rounded-xl border border-amber-200 bg-amber-50/80 py-3 pr-3 pl-5">
+                <p class="text-xs font-bold tracking-wide text-amber-700 mb-1">HARGA ID &amp; SCANNER</p>
+                <p class="text-sm text-gray-700">Normal: <span class="line-through text-red-600">Rp 5.000.000</span></p>
+                <p class="text-xl font-extrabold text-emerald-700 leading-tight">Promo: Rp 3.990.000</p>
+                <p class="text-xs font-semibold text-red-600 mt-1">Hemat Rp 1.010.000</p>
+              </div>
+              <p class="text-sm font-semibold text-gray-900 mb-1">Yang Anda dapatkan:</p>
+              <ul class="space-y-1 text-sm text-gray-700">
+                <li class="flex items-start gap-2"><span class="text-orange-600 mt-0.5">&#10003;</span><span>ID aplikasi pribadi seumur hidup (tanpa renewal fee)</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-600 mt-0.5">&#10003;</span><span>Scanner USB fingerprint + instalasi dibantu tim</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-600 mt-0.5">&#10003;</span><span>Training penggunaan aplikasi untuk tes klien</span></li>
               </ul>
             </div>
           </div>
-        </div>
-
-        <div class="bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 rounded-2xl p-8 text-white text-center">
-          <h3 class="text-2xl md:text-3xl font-bold mb-3">Saatnya Naik Level</h3>
-          <p class="text-lg text-white/90 mb-2">Dari pencari penghasilan, menjadi pencipta dampak.</p>
-          <p class="text-white/90">
-            Jika Anda ingin hidup lebih selaras, profesi yang bermakna, dan bisnis yang tidak hanya cuan tetapi juga bernilai, STIFInpreneur SuksesMulia adalah tempat Anda.
-          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Tahapan -->
+  <!-- Proof -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <span class="inline-block bg-emerald-100 text-emerald-700 px-6 py-2 rounded-full text-sm font-semibold">
+            Proof and Credibility
+          </span>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-gray-900 mt-4">
+            Dibina Tim Berpengalaman, Bukan Jalan Sendiri
+          </h2>
+        </div>
+
+        <div class="bg-white rounded-3xl p-5 md:p-7 shadow-md border border-gray-100">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">Profil Founder STIFInpreneur SuksesMulia</h3>
+
+          <div class="grid lg:grid-cols-[200px_1fr] gap-6 items-start">
+            <div class="text-center lg:text-left">
+              <img
+                src="/founder.jpeg?v=2"
+                alt="Heriansyah Putra MT Djalil"
+                width="800"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                style="width: 168px; height: 168px; max-width: 168px;"
+                class="!w-40 !h-40 rounded-full object-cover object-top border-4 border-primary-100 shadow-md mx-auto lg:mx-0 flex-shrink-0"
+              />
+              <p class="mt-4 text-sm text-gray-600">Business Manager STIFIn Genetic Indonesia</p>
+            </div>
+
+            <div class="text-gray-700 text-sm md:text-base">
+              <h4 class="text-xl font-bold text-gray-900 mb-1">Heriansyah Putra MT Djalil | Self Awareness Motivator</h4>
+              <p class="mb-4">
+                STIFInpreneur yang mendedikasikan diri membantu ribuan orang menemukan jalur hidup, profesi, dan bisnis sesuai mesin kecerdasan genetiknya.
+              </p>
+              <p class="font-semibold text-gray-900 mb-2">Dengan pengalaman:</p>
+              <ul class="space-y-2 mb-5">
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Melayani ribuan klien Tes STIFIn bersama Tim Promotor seluruh Indonesia.</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Melahirkan Top Promotor STIFIn Nasional.</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Membangun dan membina jaringan Licensed Promotor STIFIn di berbagai daerah.</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Membina profesional, pendidik, pengusaha, dan leader komunitas.</span></li>
+              </ul>
+              <p class="font-semibold text-gray-900 mb-2">Keyakinan utama:</p>
+              <ul class="space-y-2">
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Kesuksesan bukan soal paling pintar, tapi paling tepat di jalurnya.</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>STIFIn bukan sekadar alat tes, tetapi peta kehidupan.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-7 pt-7 border-t border-gray-100">
+            <h4 class="text-lg font-bold text-gray-900 mb-3 text-center">Bukti Sertifikat</h4>
+            <p class="text-sm text-gray-600 text-center mb-5">
+              Dokumentasi piagam sebagai bukti kredibilitas dan rekam jejak pembinaan.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <figure class="rounded-2xl bg-gray-50 border border-gray-200 p-3">
+                <img
+                  src="/piagam-1.jpeg"
+                  alt="Piagam pencapaian STIFInpreneur SuksesMulia 1"
+                  width="1080"
+                  height="763"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-auto rounded-xl border border-gray-200 shadow-sm"
+                />
+              </figure>
+
+              <figure class="rounded-2xl bg-gray-50 border border-gray-200 p-3">
+                <img
+                  src="/piagam-2.jpeg"
+                  alt="Piagam pencapaian STIFInpreneur SuksesMulia 2"
+                  width="1080"
+                  height="763"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-auto rounded-xl border border-gray-200 shadow-sm"
+                />
+              </figure>
+            </div>
+          </div>
+
+          <div class="mt-7 pt-7 border-t border-gray-100">
+            <h4 class="text-lg font-bold text-gray-900 mb-3 text-center">Bukti Statistik Nasional 2026</h4>
+            <p class="text-sm text-gray-600 text-center mb-5">
+              Data menunjukkan cabang kami berada di peringkat #1 nasional, dan 7 promotor dari tim kami masuk Top 10 nasional.
+            </p>
+            <div class="rounded-2xl bg-gray-50 border border-gray-200 p-3 sm:p-4">
+              <div class="grid gap-4 md:grid-cols-2">
+                <article class="rounded-2xl border border-gray-300 bg-white p-3 sm:p-4">
+                  <h5 class="text-2xl font-bold text-gray-900 text-center mb-3">Top Ten Cabang 2026</h5>
+                  <div class="overflow-x-auto">
+                    <table class="w-full min-w-[320px] table-fixed">
+                      <thead>
+                        <tr class="bg-teal-600 text-white text-sm">
+                          <th class="w-12 px-3 py-2 text-left">#</th>
+                          <th class="px-3 py-2 text-left">Nama</th>
+                          <th class="w-20 px-3 py-2 text-right">Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {topCabang2026.map((item) => (
+                          <tr class={`border-b border-gray-200 ${item.highlight ? 'bg-emerald-50' : 'bg-white'}`}>
+                            <td class="px-3 py-2 text-gray-700">{item.rank}</td>
+                            <td class={`px-3 py-2 text-gray-900 ${item.highlight ? 'font-semibold' : ''}`}>{item.name}</td>
+                            <td class="px-3 py-2 text-right text-gray-700">{item.total}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </article>
+
+                <article class="rounded-2xl border border-gray-300 bg-white p-3 sm:p-4">
+                  <h5 class="text-2xl font-bold text-gray-900 text-center mb-3">Top Ten Promotor 2026</h5>
+                  <div class="overflow-x-auto">
+                    <table class="w-full min-w-[320px] table-fixed">
+                      <thead>
+                        <tr class="bg-teal-600 text-white text-sm">
+                          <th class="w-12 px-3 py-2 text-left">#</th>
+                          <th class="px-3 py-2 text-left">Nama</th>
+                          <th class="w-20 px-3 py-2 text-right">Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {topPromotor2026.map((item) => (
+                          <tr class={`border-b border-gray-200 ${item.highlight ? 'bg-emerald-50' : 'bg-white'}`}>
+                            <td class="px-3 py-2 text-gray-700">{item.rank}</td>
+                            <td class={`px-3 py-2 text-gray-900 ${item.highlight ? 'font-semibold' : ''}`}>{item.name}</td>
+                            <td class="px-3 py-2 text-right text-gray-700">{item.total}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2 justify-center">
+              <span class="inline-flex items-center rounded-full bg-emerald-100 text-emerald-700 px-4 py-1.5 text-sm font-semibold">#1 Cabang Nasional 2026</span>
+              <span class="inline-flex items-center rounded-full bg-primary-100 text-primary-700 px-4 py-1.5 text-sm font-semibold">7 Promotor Masuk Top 10 Nasional</span>
+            </div>
+            <p class="text-xs text-gray-500 text-center mt-3">
+              Sumber:
+              <a
+                href="https://stifin.com/#:~:text=TOTAL%20TES-,Statistik,-Rangkuman%20Statistik%20STIFIn"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary-700 underline hover:text-primary-800"
+              >
+                Statistik STIFIn (stifin.com)
+              </a>
+            </p>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-gray-100 grid md:grid-cols-2 gap-4">
+            <div class="rounded-2xl bg-emerald-50 border border-emerald-100 p-5">
+              <h4 class="text-lg font-bold text-gray-900 mb-3">Kenapa Bergabung di Sini?</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Sistem sudah terbukti dan berjalan nasional.</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Pendampingan aktif, bukan dilepas sendiri.</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Budaya kolaboratif dan berintegritas.</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Misi memanusiakan manusia sesuai fitrahnya.</span></li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl bg-primary-50 border border-primary-100 p-5">
+              <h4 class="text-lg font-bold text-gray-900 mb-3">Program Ini Cocok Untuk</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Profesional dan karyawan visioner</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Pengusaha dan entrepreneur</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Pendidik dan pemilik sekolah</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Trainer, coach, dan konsultan</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Ibu rumah tangga produktif</span></li>
+                <li class="flex items-start space-x-2"><span class="text-green-600 mt-1">&#10003;</span><span>Aktivis dakwah dan sosial</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Testimonials -->
   <section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-            Tahapan Menjadi Licensed Promotor STIFIn
+        <div class="text-center mb-8">
+          <span class="inline-block bg-emerald-100 text-emerald-700 px-6 py-2 rounded-full text-sm font-semibold">
+            Video Testimoni
+          </span>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-gray-900 mt-4 mb-3">
+            Cerita Nyata Promotor yang Sudah Menjalankan Program
           </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Prosesnya bertahap, jelas, dan didampingi sampai siap melayani klien.
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            Lihat pengalaman langsung dari para promotor STIFIn yang sudah bergabung.
           </p>
         </div>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 border border-primary-100">
-            <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">1</div>
-            <h3 class="font-bold text-xl text-gray-900 mb-2">Workshop Level 1</h3>
-            <p class="text-gray-700">Mengikuti Workshop STIFIn Level 1 (WSL1) untuk memahami fondasi konsep STIFIn.</p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center">
+          {testimonialVideos.map((video) => (
+            <article class="w-full max-w-[340px] rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+              <div class="bg-black" style="aspect-ratio: 9 / 16;">
+                <iframe
+                  src={video.embedUrl}
+                  title={video.title}
+                  loading="lazy"
+                  class="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promotor Photos -->
+  <section class="py-16 md:py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-8">
+          <span class="inline-block bg-primary-100 text-primary-700 px-6 py-2 rounded-full text-sm font-semibold">
+            Social Proof
+          </span>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-gray-900 mt-4 mb-3">
+            Para Promotor yang Sudah Bergabung
+          </h2>
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            Mereka yang sudah bergabung dan sukses Menjadi promotor STIFIn dari berbagai daerah.
+          </p>
+        </div>
+
+        <div class="promotor-marquee rounded-3xl border border-gray-200 bg-white p-3 md:p-4 shadow-sm">
+          <div class="promotor-marquee-track">
+            <div class="promotor-marquee-group">
+              {promotorGallery.map((promotor) => (
+                <article class="promotor-marquee-card">
+                  <img
+                    src={promotor.src}
+                    alt={`Foto promotor STIFIn ${promotor.name}`}
+                    width="720"
+                    height="720"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-full object-cover"
+                  />
+                  <p class="promotor-marquee-caption">{promotor.name}</p>
+                </article>
+              ))}
+            </div>
+            <div class="promotor-marquee-group" aria-hidden="true">
+              {promotorGallery.map((promotor) => (
+                <article class="promotor-marquee-card">
+                  <img
+                    src={promotor.src}
+                    alt=""
+                    width="720"
+                    height="720"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-full object-cover"
+                  />
+                  <p class="promotor-marquee-caption">{promotor.name}</p>
+                </article>
+              ))}
+            </div>
           </div>
-          <div class="bg-gradient-to-br from-secondary-50 to-white rounded-2xl p-6 border border-secondary-100">
-            <div class="w-12 h-12 bg-secondary-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">2</div>
-            <h3 class="font-bold text-xl text-gray-900 mb-2">Workshop Level 2</h3>
-            <p class="text-gray-700">Melanjutkan ke WSL2 untuk pendalaman praktik dan kesiapan melayani klien.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer -->
+  <section id="offer-program" class="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="inline-block bg-red-100 text-red-700 px-6 py-2 rounded-full text-sm font-semibold">
+            Offer
+          </span>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mt-4 mb-3">
+            Pilih Skema yang Paling Sesuai untuk Anda
+          </h2>
+          <p class="text-lg text-gray-600">
+            Dua opsi tersedia: bayar penuh untuk harga terbaik, atau cicilan untuk cashflow yang lebih ringan.
+          </p>
+          <p class="inline-flex items-center rounded-full bg-emerald-100 text-emerald-700 px-10 py-3 text-base md:text-lg font-bold leading-relaxed mt-4">
+            🌟Garansi Balik Modal (BEP) &le; 3 Bulan*
+          </p>
+          <p class="text-xs text-gray-500 mt-2">
+            *Dengan menjalankan SOP, aktivitas promosi, dan target minimum yang direkomendasikan.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6 mb-8">
+          <div class="rounded-2xl border-2 border-yellow-300 bg-white p-7 shadow-lg">
+            <span class="inline-block bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold mb-4">PENAWARAN SPESIAL</span>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Investasi Paket Promotor STIFIn Spesial bulan {currentMonth}
+            </h3>
+            <p class="text-2xl text-gray-700 mb-1">Normal: <span class="line-through text-red-600">Rp 12.500.000</span></p>
+            <p class="text-4xl font-bold text-emerald-700 mb-1">Flash Promo: Rp 7.990.000</p>
+            <p class="text-red-600 font-semibold mb-5">Hemat Rp 4.510.000</p>
+            <div class="bg-gray-50 rounded-xl p-5">
+              <p class="font-bold text-gray-900 mb-3">Benefit include:</p>
+              <div class="grid sm:grid-cols-2 gap-2 text-gray-700">
+                <p>&#10003; WSL 1: 1 Hari</p>
+                <p>&#10003; WSL 2: 2 Hari</p>
+                <p>&#10003; E-Module</p>
+                <p>&#10003; E-Certificate</p>
+                <p>&#10003; ID Promotor</p>
+                <p>&#10003; Aplikasi Promotor</p>
+                <p>&#10003; 1 bh Scanner Fingerprint</p>
+                <p>&#10003; 1 bh Buku Pancarona (bonus)</p>
+                <p>&#10003; Weekly Enrichment</p>
+                <p>&#10003; Monthly Mentoring</p>
+                <p>&#10003; Annualy Reward</p>
+                <p>&#10003; Join SuksesMulia Community</p>
+              </div>
+            </div>
+            <div class="mt-5">
+              <a
+                href={waUrl}
+                style="background-color: #facc15; color: #111827; border-color: #eab308;"
+                class="inline-flex w-full sm:w-auto items-center justify-center px-6 py-3 rounded-full font-bold border shadow-sm transition-colors hover:brightness-95"
+              >
+                Ambil Flash Promo
+              </a>
+            </div>
           </div>
-          <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 border border-primary-100">
-            <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">3</div>
-            <h3 class="font-bold text-xl text-gray-900 mb-2">Lisensi & Aplikasi</h3>
-            <p class="text-gray-700">Mengambil lisensi ID aplikasi promotor dan siap menjalankan layanan secara resmi.</p>
+
+          <div class="rounded-2xl border border-emerald-300 bg-white p-7 shadow-md">
+            <span class="inline-block bg-emerald-100 text-emerald-700 px-4 py-1 rounded-full text-xs font-bold mb-4">ALTERNATIF PEMBAYARAN</span>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Program Cicilan (Opsional)</h3>
+            <p class="text-xl text-gray-700 mb-3">Normal: <span class="line-through text-red-600">Rp 12.500.000</span></p>
+            <p class="text-3xl font-bold text-emerald-700 mb-4">Promo Cicilan: Rp 10.000.000</p>
+            <div class="space-y-2 text-lg text-gray-800 mb-6">
+              <p>DP (50%): <span class="font-bold">Rp 5.000.000</span></p>
+              <p>Cicilan (5x): <span class="font-bold">Rp 1.000.000/bulan</span></p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="#cta-promotor-stifin"
+                class="inline-block bg-emerald-600 text-white border border-emerald-600 px-6 py-3 rounded-full font-bold hover:bg-emerald-500 transition-colors"
+              >
+                Konsultasi Dulu
+              </a>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="inline-block bg-primary-100 text-primary-700 px-6 py-2 rounded-full text-sm font-semibold">
+            FAQ
+          </span>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mt-4">
+            Pertanyaan yang Sering Ditanyakan
+          </h2>
+        </div>
+
+        <div class="space-y-4">
+          <details class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <summary class="font-bold text-gray-900 cursor-pointer">Apakah bisa dijalankan sambil tetap bekerja?</summary>
+            <p class="text-gray-700 mt-3">Bisa. Program ini dirancang fleksibel dan dapat dijalankan bertahap sesuai waktu yang Anda miliki.</p>
+          </details>
+          <details class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <summary class="font-bold text-gray-900 cursor-pointer">Apakah harus punya latar belakang psikologi?</summary>
+            <p class="text-gray-700 mt-3">Tidak harus. Anda akan dibekali materi, SOP layanan, dan pendampingan praktik hingga siap melayani klien.</p>
+          </details>
+          <details class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <summary class="font-bold text-gray-900 cursor-pointer">Apa yang saya dapat setelah lulus tahapan program?</summary>
+            <p class="text-gray-700 mt-3">Anda mendapatkan lisensi promotor, ID aplikasi, perangkat pendukung, serta akses komunitas dan mentoring.</p>
+          </details>
+          <details class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <summary class="font-bold text-gray-900 cursor-pointer">Kalau masih bingung pilih paket penuh atau cicilan?</summary>
+            <p class="text-gray-700 mt-3">Silakan konsultasi dulu via WhatsApp agar kami bantu hitung opsi yang paling realistis untuk kondisi Anda.</p>
+          </details>
         </div>
       </div>
     </div>
@@ -419,7 +739,7 @@ const waUrl = generateGeneralWhatsAppURL(
           Ambil Peran, Bukan Sekadar Menonton
         </h2>
         <p class="text-xl text-white/90 mb-8">
-          Daftar dan konsultasi peluang, kenali potensi genetik Anda, lalu mulai perjalanan sebagai Licensed Promotor STIFIn.
+          Mulai dari konsultasi singkat. Kami bantu petakan jalur paling tepat untuk Anda menjadi Licensed Promotor STIFIn.
         </p>
         <a
           href={waUrl}
@@ -438,4 +758,81 @@ const waUrl = generateGeneralWhatsAppURL(
       </div>
     </div>
   </section>
+
+  <style>
+    .promotor-marquee {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+    }
+
+    .promotor-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: promotor-marquee-scroll 44s linear infinite;
+      will-change: transform;
+    }
+
+    .promotor-marquee-group {
+      display: flex;
+      gap: 1rem;
+      padding-right: 1rem;
+    }
+
+    .promotor-marquee-card {
+      position: relative;
+      width: clamp(150px, 19vw, 220px);
+      aspect-ratio: 1 / 1;
+      flex: 0 0 auto;
+      overflow: hidden;
+      border-radius: 1rem;
+      border: 1px solid rgb(229 231 235);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+      background: rgb(243 244 246);
+    }
+
+    .promotor-marquee-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 0.75rem 0.7rem;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0) 0%, rgba(17, 24, 39, 0.85) 100%);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+
+    .promotor-marquee:hover .promotor-marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes promotor-marquee-scroll {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+      to {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .promotor-marquee-track {
+        animation-duration: 34s;
+      }
+      .promotor-marquee-card {
+        width: clamp(135px, 42vw, 170px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .promotor-marquee-track {
+        animation: none;
+      }
+    }
+  </style>
 </BaseLayout>
