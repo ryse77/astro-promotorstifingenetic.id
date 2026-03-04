@@ -28,14 +28,13 @@ const monthName = currentMonthName.charAt(0).toUpperCase() + currentMonthName.sl
     <SEOHead title={pageTitle} description={description} schemaType="Organization" />
     <SchemaOrg type="Organization" />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-008R0THXPL"></script>
-    <script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-17932220972"></script>
+    <script is:inline>
       {`
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-008R0THXPL');
-        gtag('config', 'AW-17932220972');
+        window.gtag = function gtag(){window.dataLayer.push(arguments);}
+        window.gtag('js', new Date());
+        window.gtag('config', 'AW-17932220972');
       `}
     </script>
   </head>
